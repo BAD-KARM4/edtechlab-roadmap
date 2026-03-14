@@ -1,6 +1,8 @@
-import { readFileSync } from 'fs'
-import path from 'path'
+import roadmapData from '@/data/roadmap.json'
 
+export function getRoadmapData() {
+  return roadmapData
+}
 export interface RoadmapItem {
   id: string
   name: string
