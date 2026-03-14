@@ -61,7 +61,11 @@ jobs:
           ls -la ./out/_next/static 2>/dev/null || echo "_next/static not found"
 
       - name: Disable Jekyll processing
-        run: touch ./out/.nojekyll
+        run: |
+          mkdir -p ./out
+          touch ./out/.nojekyll
+          echo "✅ Created .nojekyll in ./out"
+          ls -la ./out/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
