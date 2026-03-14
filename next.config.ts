@@ -1,16 +1,11 @@
-const basePath = process.env.BASE_PATH ?? ''
+import type { NextConfig } from "next";
 
-const nextConfig = {
-  output: 'export',
-  trailingSlash: true,
+const nextConfig: NextConfig = {
+  output: "export",
+  basePath: "/edtechlab-roadmap",
   images: {
-    unoptimized: true,
+    unoptimized: true,        // отключаем оптимизацию изображений
   },
-  basePath,
-  assetPrefix: basePath,
-  env: {
-    NEXT_PUBLIC_BASE_PATH: basePath,
-  },
-}
+};
 
-export default nextConfig
+export default nextConfig;
