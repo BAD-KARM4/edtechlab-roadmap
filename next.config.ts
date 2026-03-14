@@ -1,11 +1,16 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
+
+const basePath = '/edtechlab-roadmap'
 
 const nextConfig: NextConfig = {
-  output: "export",
-  basePath: "/edtechlab-roadmap",
+  output: 'export',
+  basePath,
   images: {
-    unoptimized: true,        // отключаем оптимизацию изображений
+    unoptimized: true,
   },
-};
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
+}
 
-export default nextConfig;
+export default nextConfig
