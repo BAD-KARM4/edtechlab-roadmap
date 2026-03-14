@@ -37,7 +37,6 @@ jobs:
         env:
           BASE_PATH: /${{ github.event.repository.name }}
 
-      # 🔥 НОВЫЙ ШАГ: Отладка сборки
       - name: 🐛 Debug: Show build output
         run: |
           echo "=== 📁 Contents of ./out directory ==="
