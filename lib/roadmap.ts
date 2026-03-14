@@ -1,8 +1,5 @@
-import roadmapData from '@/data/roadmap.json'
+import rawRoadmapData from '@/data/roadmap.json'
 
-export function getRoadmapData() {
-  return roadmapData
-}
 export interface RoadmapItem {
   id: string
   name: string
@@ -21,8 +18,8 @@ export interface RoadmapData {
   productName: string
   companyName: string
   title: string
-  tabTitle: string;
-  metaDescription: string;
+  tabTitle: string
+  metaDescription: string
   periods: RoadmapPeriod[]
 }
 
@@ -57,15 +54,15 @@ function isRoadmapData(value: unknown): value is RoadmapData {
     typeof value.productName === 'string' &&
     typeof value.companyName === 'string' &&
     typeof value.title === 'string' &&
+    typeof value.tabTitle === 'string' &&
+    typeof value.metaDescription === 'string' &&
     Array.isArray(value.periods) &&
     value.periods.every(isRoadmapPeriod)
   )
 }
 
 export function getRoadmapData(): RoadmapData {
-  const filePath = path.join(process.cwd(), 'data', 'roadmap.json')
-  const raw = readFileSync(filePath, 'utf-8')
-  const parsed: unknown = JSON.parse(raw)
+  const parsed: unknown = rawRoadmapData
 
   if (!isRoadmapData(parsed)) {
     throw new Error('Invalid roadmap.json structure')
