@@ -150,7 +150,7 @@
         "description": "Course on working with vulnerability scanners to assess infrastructure security.",
         "x": 350,
         "y": 150,
-        "track": "red"
+        "track": "purple"
       },
       {
         "id": "att-ck",
@@ -158,7 +158,7 @@
         "description": "Course on infrastructure security assessment. 100+ practical cases for TTP training in Red Team projects.",
         "x": 650,
         "y": 150,
-        "track": "red"
+        "track": "purple"
       },
       {
         "id": "ethical-hacking",
@@ -166,7 +166,7 @@
         "description": "Course on ethical hacking and penetration testing.",
         "x": 950,
         "y": 50,
-        "track": "red"
+        "track": "purple"
       },
       {
         "id": "waf",
@@ -358,7 +358,7 @@
         "description": "Advanced course on combining offensive and defensive techniques to improve security.",
         "x": 1550,
         "y": 150,
-        "track": "red"
+        "track": "purple"
       }
     ],
     "edges": [

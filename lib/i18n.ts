@@ -12,7 +12,7 @@ export interface LearningPathNode {
   description: string
   x: number
   y: number
-  track: 'common' | 'red' | 'blue' | 'green'
+  track: 'common' | 'red' | 'blue' | 'green' | 'purple'
 }
 
 export interface LearningPathEdge {

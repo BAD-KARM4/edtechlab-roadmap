@@ -987,6 +987,7 @@ button {
 .learning-path-legend-color.red { border-color: #ff3b2f; }
 .learning-path-legend-color.blue { border-color: #0066ff; }
 .learning-path-legend-color.green { border-color: #00cc66; }
+.learning-path-legend-color.purple { border-color: #9b51e0; }
 
 @media (max-width: 760px) {
   .learning-path-section {

@@ -17,6 +17,7 @@ const trackColors = {
   red: { stroke: '#ff3b2f', fill: 'rgba(255, 59, 47, 0.1)' },
   blue: { stroke: '#0066ff', fill: 'rgba(0, 102, 255, 0.1)' },
   green: { stroke: '#00cc66', fill: 'rgba(0, 204, 102, 0.1)' },
+  purple: { stroke: '#9b51e0', fill: 'rgba(155, 81, 224, 0.15)' },
 }
 
 export function LearningPath({ data, locale }: LearningPathProps) {
@@ -37,7 +38,8 @@ export function LearningPath({ data, locale }: LearningPathProps) {
   // Получаем точку на границе прямоугольника
   const getEdgePoints = (
     fromNode: LearningPathNode,
-    toNode: LearningPathNode
+    toNode: LearningPathNode,
+    edge: LearningPathEdge
   ) => {
     const fromCenterX = fromNode.x + NODE_WIDTH / 2
     const fromCenterY = fromNode.y + NODE_HEIGHT / 2
@@ -50,8 +52,18 @@ export function LearningPath({ data, locale }: LearningPathProps) {
     
     let startX, startY, endX, endY
     
+    // Специальные случаи: стрелки в sast и cs должны входить слева
+    const enterFromLeft = edge.to === 'sast' || edge.to === 'cs'
+    
+    if (enterFromLeft) {
+      // Входим в левую границу
+      startX = fromNode.x + NODE_WIDTH
+      startY = fromCenterY
+      endX = toNode.x
+      endY = toCenterY
+    }
     // Если горизонтальное преобладает
-    if (Math.abs(dx) > Math.abs(dy)) {
+    else if (Math.abs(dx) > Math.abs(dy)) {
       // Стрелка идёт слева направо или справа налево
       if (dx > 0) {
         // Вправо: выходим из правой границы, входим в левую
@@ -87,8 +99,12 @@ export function LearningPath({ data, locale }: LearningPathProps) {
   }
 
   // Получаем путь для стрелки
-  const getEdgePath = (fromNode: LearningPathNode, toNode: LearningPathNode) => {
-    const { startX, startY, endX, endY } = getEdgePoints(fromNode, toNode)
+  const getEdgePath = (
+    fromNode: LearningPathNode,
+    toNode: LearningPathNode,
+    edge: LearningPathEdge
+  ) => {
+    const { startX, startY, endX, endY } = getEdgePoints(fromNode, toNode, edge)
 
     return `M ${startX} ${startY} L ${endX} ${endY}`
   }
@@ -115,6 +131,10 @@ export function LearningPath({ data, locale }: LearningPathProps) {
         <div className="learning-path-legend-item">
           <span className="learning-path-legend-color green" />
           <span>Green Team</span>
+        </div>
+        <div className="learning-path-legend-item">
+          <span className="learning-path-legend-color purple" />
+          <span>Purple Team</span>
         </div>
       </div>
 
@@ -166,6 +186,16 @@ export function LearningPath({ data, locale }: LearningPathProps) {
               >
                 <polygon points="0 0, 10 3.5, 0 7" fill="#666666" />
               </marker>
+              <marker
+                id="arrowhead-purple"
+                markerWidth="10"
+                markerHeight="7"
+                refX="9"
+                refY="3.5"
+                orient="auto"
+              >
+                <polygon points="0 0, 10 3.5, 0 7" fill="#9b51e0" />
+              </marker>
             </defs>
 
             {/* Слой со стрелками */}
@@ -175,17 +205,25 @@ export function LearningPath({ data, locale }: LearningPathProps) {
                 const toNode = data.nodes.find(n => n.id === edge.to)
                 if (!fromNode || !toNode) return null
 
-                const pathColor = trackColors[toNode.track].stroke
+                // Специальный случай: стрелка от realtime-investigation к purple-team - синяя
+                let pathColor = trackColors[toNode.track].stroke
+                let arrowheadTrack = toNode.track
+                
+                if (edge.from === 'realtime-investigation' && edge.to === 'purple-team') {
+                  pathColor = trackColors.blue.stroke
+                  arrowheadTrack = 'blue'
+                }
+
                 const isActive = hoveredNode === edge.from || hoveredNode === edge.to
 
                 return (
                   <path
                     key={index}
-                    d={getEdgePath(fromNode, toNode)}
+                    d={getEdgePath(fromNode, toNode, edge)}
                     stroke={pathColor}
                     strokeWidth={isActive ? 3 : 2}
                     fill="none"
-                    markerEnd={`url(#arrowhead-${toNode.track})`}
+                    markerEnd={`url(#arrowhead-${arrowheadTrack})`}
                     className={`learning-path-edge ${isActive ? 'active' : ''}`}
                     opacity={isActive ? 1 : 0.4}
                   />
@@ -289,6 +327,7 @@ export function LearningPath({ data, locale }: LearningPathProps) {
               {selectedNode.track === 'red' && 'Red Team'}
               {selectedNode.track === 'blue' && 'Blue Team'}
               {selectedNode.track === 'green' && 'Green Team'}
+              {selectedNode.track === 'purple' && 'Purple Team'}
             </div>
 
             <h3 className="learning-path-modal-title">
