@@ -582,7 +582,7 @@ button {
 
 .roadmap-info-title {
   margin: 28px 0 0;
-  font-size: clamp(26px, 3vw, 34px);
+  font-size: clamp(26px, 3vw, 33px);
   line-height: 1.05;
   letter-spacing: -0.04em;
 }
