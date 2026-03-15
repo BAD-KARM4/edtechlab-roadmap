@@ -17,33 +17,33 @@
       "items": [
         {
           "id": "oss-nta-course",
-          "name": "OSS tools in Network Attack Analysis using NTA",
-          "description": "8 new case studies on the open-source tools Arkime and Wireshark. In total, the course contains 40 practical cases."
+          "name": "OSS Tools in Network Attack Analysis using NTA",
+          "description": "8 new cases on Open Source tools Arkime and Wireshark. Total of 40 practical cases in the course."
         },
         {
           "id": "sast-web-course",
-          "name": "Fixing Web Vulnerabilities using SAST",
-          "description": "A new course on web application source code analysis and subsequent web vulnerability remediation. A practical guide featuring 14 case studies on PT AI."
+          "name": "New Course: Fixing Web Vulnerabilities using SAST",
+          "description": "Course on source code analysis of web applications and subsequent web vulnerability remediation. Practice with 14 cases on PT AI."
         },
         {
           "id": "edtechlab-installer",
-          "name": "EdTechLab Installer - Auto-Deployment Platform",
-          "description": "A platform for automated deployment of software packages for any configuration in On-Premise delivery."
+          "name": "EdTechLab Installer — Auto-Deployment Platform",
+          "description": "Platform for automated deployment of the software complex for any configuration in On-Premise delivery."
         },
         {
           "id": "am-course",
-          "name": "Asset Management using AM",
-          "description": "New course on asset management. Theoretical module available in April 2026. Course includes 10 practical cases from the start."
+          "name": "New Course: Asset Management using AM",
+          "description": "Course on asset management. Theoretical module available in April 2026. Course includes 10 practical cases from the start."
         },
         {
           "id": "siem-course",
-          "name": "Security Event Analysis using SIEM",
-          "description": "New cases added, now totaling 25 cases."
+          "name": "Course Update: Security Event Analysis using SIEM",
+          "description": "New cases added. Total of 25 practical cases in the course."
         },
         {
           "id": "waf-course",
-          "name": "Cyber Attack Analysis on Web Applications using WAF",
-          "description": "New cases added, now totaling 30 cases."
+          "name": "Course Update: Web Application Attack Analysis using WAF",
+          "description": "New cases added. Total of 30 practical cases in the course."
         }
       ]
     },
@@ -55,18 +55,18 @@
       "items": [
         {
           "id": "beta-testers",
-          "name": "Launching the PT ETL Testers program",
-          "description": "The PT EdTechLab simulator beta testing program gives users the opportunity to explore training materials by testing preliminary versions and sharing their impressions and suggestions."
+          "name": "PT ETL Testers Program Launch",
+          "description": "Beta testing program for PT EdTechLab trainer gives users the opportunity to explore educational materials by testing preliminary versions and sharing their feedback and suggestions."
         },
         {
           "id": "incident-investigation",
-          "name": "Comprehensive investigation of cyberattacks",
-          "description": "New course on investigating complex cyber attacks using multiple security tools. Less theory, more practice on real attack chains. Red to blue practice: users first act as hackers breaking infrastructure, then investigate sophisticated attack chains."
+          "name": "New Course: Comprehensive Investigation of Cyberattacks",
+          "description": "Course on investigating complex cyber attacks using multiple security tools. Less theory, more practice on real attack chains. Red to blue practice: users first act as hackers breaking infrastructure, then investigate sophisticated attack chains."
         },
         {
           "id": "attack-ttp",
-          "name": "ATT&CK Playbook: TTP in Practice",
-          "description": "A new course on infrastructure security analysis. 100+ practical cases for practicing TTP in Red Team projects."
+          "name": "New Course: ATT&CK Playbook: TTP in Practice",
+          "description": "Course on infrastructure security assessment. 100+ practical cases for TTP training in Red Team projects."
         },
         {
           "id": "metaplatform-beta",
@@ -75,8 +75,8 @@
         },
         {
           "id": "edr-course",
-          "name": "Threat Detection with EDR",
-          "description": "New course on endpoint threat detection and analysis using EDR."
+          "name": "New Course: Threat Detection with EDR",
+          "description": "Course on threat detection and analysis at endpoints using EDR."
         }
       ]
     },
@@ -88,18 +88,18 @@
       "items": [
         {
           "id": "intro-cybersec",
-          "name": "Introduction to Cybersecurity",
-          "description": "New IT fundamentals course with cybersecurity focus. 4 modules covering OS administration, computer networking, and web application deployment."
+          "name": "New Course: Introduction to Cybersecurity",
+          "description": "Course on IT fundamentals with cybersecurity focus. 4 modules covering OS administration, computer networking, and web application deployment."
         },
         {
           "id": "metaplatform-release",
           "name": "First Release of Autonomous Learning Metaplatform",
-          "description": "Designed for use in On-Premise installations."
+          "description": "Designed for On-Premise installations."
         },
         {
           "id": "vm-course",
-          "name": "Vulnerability Remediation using VM",
-          "description": "New cases added, now totaling 25 cases."
+          "name": "Course Update: Vulnerability Remediation using VM",
+          "description": "New cases added. Total of 25 practical cases in the course."
         }
       ]
     },
@@ -111,23 +111,23 @@
       "items": [
         {
           "id": "ics-attack",
-          "name": "ICS Cyber Attack Analysis using PT ISIM",
-          "description": "New course on investigating cyber attacks on technological infrastructure."
+          "name": "New Course: ICS Cyber Attack Analysis using PT ISIM",
+          "description": "Course on investigating cyber attacks on technological infrastructure."
         },
         {
           "id": "oss-waf",
-          "name": "OSS tools in Web Application Attack Analysis using WAF",
-          "description": "New cases on SafeLine. Total of 35 practical cases ready."
+          "name": "OSS Tools in Web Application Attack Analysis using WAF",
+          "description": "New cases on SafeLine. Total of 35 practical cases in the course."
         },
         {
           "id": "oss-siem",
-          "name": "OSS tools in Security Event Analysis using SIEM",
-          "description": "New cases on Wazuh. Course will have 35 practical cases in total."
+          "name": "OSS Tools in Security Event Analysis using SIEM",
+          "description": "New cases on Wazuh. Total of 35 practical cases in the course."
         },
         {
           "id": "am-course-expansion",
-          "name": "Asset Management using AM",
-          "description": "New cases added, now totaling 20 cases."
+          "name": "Course Update: Asset Management using AM",
+          "description": "New cases added. Total of 20 practical cases in the course."
         }
       ]
     }
