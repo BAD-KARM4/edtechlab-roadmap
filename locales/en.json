@@ -6,44 +6,44 @@
   "common": {
     "productName": "PT EdTechLab",
     "companyName": "Positive Technologies",
-    "title": "Product Roadmap 2026 – 2027"
+    "title": "Product Roadmap 2026"
   },
   "periods": [
     {
       "id": "q1-2026",
       "label": "Q1 2026",
       "timeframe": "January — March 2026",
-      "summary": "Platform foundation: lab orchestration, scenario engine, and unified learning workspace for autonomous practice.",
+      "summary": "Launch of key courses on OSS and PT products: NTA, SAST, SIEM, WAF, AM. Auto-deployment platform for trainers.",
       "items": [
         {
-          "id": "lab-orchestrator",
-          "name": "Lab Orchestration",
-          "description": "Unified layer for managing lab environments: start, stop, reset, and lifecycle control without instructor intervention."
+          "id": "oss-nta-course",
+          "name": "OSS Product in Network Attack Analysis with NTA",
+          "description": "8–9 new cases on Open Source systems Arkime and Wireshark. Total of 40 practical cases in the course."
         },
         {
-          "id": "scenario-engine",
-          "name": "Scenario and Learning Steps Engine",
-          "description": "Step-by-step scenario system with checkpoints, execution logic, completion conditions, and action validation."
+          "id": "sast-web-course",
+          "name": "Web Vulnerability Remediation with SAST",
+          "description": "Course with theory on web application scanners. Practice with 14 cases on PT AI."
         },
         {
-          "id": "student-workspace",
-          "name": "Personal Learning Workspace",
-          "description": "Learner interface with goals, materials, hints, artifacts, and overall practice progress tracking."
+          "id": "edtechlab-installer",
+          "name": "EdTechLab Installer Auto-Deployment Platform",
+          "description": "Platform for quick deployment of trainer with PT and OSS products in On-Premise installations. License handling for trainer usage."
         },
         {
-          "id": "sandbox-reset",
-          "name": "Environment Reset to Known State",
-          "description": "Quickly restore lab environment to reference configuration after errors, experiments, or incomplete scenarios."
+          "id": "am-course",
+          "name": "Asset Management with AM",
+          "description": "New course on asset management. Theoretical module available in April 2026. Course includes 10 practical cases from the start."
         },
         {
-          "id": "checkpoints",
-          "name": "Checkpoints and Save Points",
-          "description": "Intermediate state saving mechanism to continue long exercises without replaying all stages."
+          "id": "siem-course",
+          "name": "Security Event Analysis with SIEM",
+          "description": "New cases added, now totaling 25 cases."
         },
         {
-          "id": "attempt-telemetry",
-          "name": "Basic Attempt and Time Telemetry",
-          "description": "Collection of execution time, attempt count, freezes, and common errors for subsequent scenario efficiency analysis."
+          "id": "waf-course",
+          "name": "Web Application Cyber Attack Analysis with WAF",
+          "description": "New cases added, now totaling 30 cases."
         }
       ]
     },
@@ -51,32 +51,32 @@
       "id": "q2-2026",
       "label": "Q2 2026",
       "timeframe": "April — June 2026",
-      "summary": "Focus on adaptivity: personalized learning paths, automatic session review, and multi-level hint system.",
+      "summary": "Beta testers program launch, new complex incident investigation course, and metaplatform with SaaS support.",
       "items": [
         {
-          "id": "adaptive-paths",
-          "name": "Adaptive Learning Paths",
-          "description": "Automatic adjustment of learning route based on user strengths, weaknesses, pace, and accumulated results."
+          "id": "beta-testers",
+          "name": "Beta Testers Program Launch",
+          "description": "Focus group of users gets access to all course materials and provides feedback."
         },
         {
-          "id": "auto-debrief",
-          "name": "Automatic Session Review",
-          "description": "Summary of user actions after scenario completion: errors, missed steps, successful solutions, and improvement recommendations."
+          "id": "incident-investigation",
+          "name": "Complex Cyber Attack Investigation",
+          "description": "New course on investigating complex cyber attacks using multiple security tools. Less theory, more practice on real attack chains. Red to blue practice: users first act as hackers breaking infrastructure, then investigate sophisticated attack chains."
         },
         {
-          "id": "mentor-hints",
-          "name": "Multi-level Hints",
-          "description": "Flexible hint system with multiple detail levels: from light guidance to nearly complete solution explanation."
+          "id": "attack-ttp",
+          "name": "ATT&CK Guide: TTP in Practice",
+          "description": "New course on infrastructure security assessment. 100+ practical cases for white hat hacker TTP training."
         },
         {
-          "id": "skill-gap",
-          "name": "Skill Gap Detection",
-          "description": "Automatic identification of topics and competencies where the user experiences the most difficulty during practice."
+          "id": "metaplatform-beta",
+          "name": "Metaplatform Beta Version",
+          "description": "Major update of EdTechLab Academy learning platform. UX/UI refresh, new features. SaaS format support."
         },
         {
-          "id": "difficulty-tuning",
-          "name": "Dynamic Difficulty Adjustment",
-          "description": "Adaptation of task difficulty based on progress and completion quality to maintain optimal challenge level."
+          "id": "edr-course",
+          "name": "Incident Response with EDR",
+          "description": "New course on EDR technology. 2 modules: theory on EDR solutions and practice on cyber attack artifact analysis."
         }
       ]
     },
@@ -84,32 +84,22 @@
       "id": "q3-2026",
       "label": "Q3 2026",
       "timeframe": "July — September 2026",
-      "summary": "Focus on scale: content factory, skills matrix, and multi-tenancy for independent learning programs.",
+      "summary": "Introduction to Cybersecurity, first release of autonomous learning metaplatform, and VM course update.",
       "items": [
         {
-          "id": "content-factory",
-          "name": "Scenario Content Factory",
-          "description": "Environment for creating, editing, validating, and versioning learning scenarios and practical exercises."
+          "id": "intro-cybersec",
+          "name": "Introduction to Cybersecurity",
+          "description": "New IT fundamentals course with cybersecurity focus. 4 modules covering OS administration, computer networking, and web application deployment."
         },
         {
-          "id": "skills-matrix",
-          "name": "Skills Matrix and Coverage",
-          "description": "Mapping scenarios to specific skills and knowledge areas to track curriculum coverage and identify gaps."
+          "id": "metaplatform-release",
+          "name": "First Release of Autonomous Learning Metaplatform",
+          "description": "Designed for On-Prem installations."
         },
         {
-          "id": "tenant-management",
-          "name": "Multi-tenancy",
-          "description": "Support for isolated spaces for different teams, customers, or learning cohorts with their own configuration."
-        },
-        {
-          "id": "versioning",
-          "name": "Scenario Versioning",
-          "description": "Storage and release of multiple versions of the same scenario for different difficulty levels, cohorts, and curriculum editions."
-        },
-        {
-          "id": "review-flow",
-          "name": "Content Review and Publication",
-          "description": "Process for approval, review, and safe publication of new scenarios and changes to existing practical exercises."
+          "id": "vm-course",
+          "name": "Vulnerability Management with VM",
+          "description": "New cases added, now totaling 25 cases."
         }
       ]
     },
@@ -117,65 +107,27 @@
       "id": "q4-2026",
       "label": "Q4 2026",
       "timeframe": "October — December 2026",
-      "summary": "Focus on integrations and analytics: LMS, API, telemetry export, and executive skills reporting.",
+      "summary": "ICS attack analysis course, new OSS cases for WAF and SIEM, asset management course expansion.",
       "items": [
         {
-          "id": "lms",
-          "name": "LMS Integrations",
-          "description": "Integration with external learning management systems for transferring statuses, assignments, results, and learning analytics."
+          "id": "ics-attack",
+          "name": "ICS Cyber Attack Analysis with PT ISIM",
+          "description": "New course on investigating cyber attacks on technological infrastructure."
         },
         {
-          "id": "public-api",
-          "name": "Public API",
-          "description": "Programmatic interface for integrating PT EdTechLab with external platforms, portals, and internal company services."
+          "id": "oss-waf",
+          "name": "OSS Product in Web Application Attack Analysis with WAF",
+          "description": "New cases on SafeLine. Total of 35 practical cases ready."
         },
         {
-          "id": "telemetry-export",
-          "name": "Telemetry Export",
-          "description": "Export of events and completion metrics to external analytics and management systems."
+          "id": "oss-siem",
+          "name": "OSS Product in Security Event Analysis with SIEM",
+          "description": "New cases on Wazuh. Course will have 35 practical cases in total."
         },
         {
-          "id": "executive-reporting",
-          "name": "Executive Reporting",
-          "description": "Reports and dashboards for managers showing skill mastery levels, learning dynamics, and problem areas."
-        },
-        {
-          "id": "sso",
-          "name": "SSO and Unified Identity",
-          "description": "Single authentication and linked user profile for seamless operation between PT EdTechLab and corporate ecosystem."
-        }
-      ]
-    },
-    {
-      "id": "q1-2027",
-      "label": "Q1 2027",
-      "timeframe": "January — March 2027",
-      "summary": "Focus on integrations and analytics: LMS, API, telemetry export, and executive skills reporting.",
-      "items": [
-        {
-          "id": "lms",
-          "name": "LMS Integrations",
-          "description": "Integration with external learning management systems for transferring statuses, assignments, results, and learning analytics."
-        },
-        {
-          "id": "public-api",
-          "name": "Public API",
-          "description": "Programmatic interface for integrating PT EdTechLab with external platforms, portals, and internal company services."
-        },
-        {
-          "id": "telemetry-export",
-          "name": "Telemetry Export",
-          "description": "Export of events and completion metrics to external analytics and management systems."
-        },
-        {
-          "id": "executive-reporting",
-          "name": "Executive Reporting",
-          "description": "Reports and dashboards for managers showing skill mastery levels, learning dynamics, and problem areas."
-        },
-        {
-          "id": "sso",
-          "name": "SSO and Unified Identity",
-          "description": "Single authentication and linked user profile for seamless operation between PT EdTechLab and corporate ecosystem."
+          "id": "am-course-expansion",
+          "name": "Asset Management with AM",
+          "description": "New cases added, now totaling 20 cases."
         }
       ]
     }
