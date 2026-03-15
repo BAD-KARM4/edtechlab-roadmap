@@ -1,6 +1,5 @@
 import { defaultLocale } from '@/lib/i18n'
-
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+import { basePath } from '@/lib/config'
 
 // Для статического экспорта создаём HTML с meta refresh
 // Middleware не работает с output: 'export'

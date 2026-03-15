@@ -2,13 +2,12 @@
 
 import { usePathname } from 'next/navigation'
 import { supportedLocales, type Locale } from '@/lib/i18n'
+import { basePath } from '@/lib/config'
 
 const localeNames: Record<Locale, string> = {
   ru: 'RU',
   en: 'EN',
 }
-
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
 export function LocaleSwitcher() {
   const pathname = usePathname()

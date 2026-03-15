@@ -119,7 +119,7 @@ export function getLocaleFromPath(pathname: string): Locale {
 }
 
 export function getPathnameWithLocale(pathname: string, locale: Locale): string {
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+  const basePath = '/edtechlab-roadmap'
   const currentLocale = getLocaleFromPath(pathname.replace(basePath, ''))
 
   // Remove leading slash and basePath for processing

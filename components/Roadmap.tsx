@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState, useCallback } from 'react'
 import type { RoadmapData, RoadmapItem, RoadmapPeriod } from '@/lib/roadmap'
 import { LocaleSwitcher } from '@/components/LocaleSwitcher'
+import { basePath } from '@/lib/config'
 
 function getValidPeriod(periods: RoadmapPeriod[], periodId: string) {
   return periods.find((period) => period.id === periodId) ?? periods[0]
@@ -17,7 +18,7 @@ interface RoadmapProps {
 }
 
 export function Roadmap({ data }: RoadmapProps) {
-  const assetBase = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
+  const assetBase = basePath
   const [activePeriodId, setActivePeriodId] = useState(data.periods[0]?.id ?? '')
   const [activeItemId, setActiveItemId] = useState(data.periods[0]?.items[0]?.id ?? '')
 
