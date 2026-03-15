@@ -111,9 +111,6 @@ export function LearningPath({ data, locale }: LearningPathProps) {
 
   return (
     <section className="learning-path-section" aria-label={data.title}>
-      <h2 className="learning-path-section-title">{data.title}</h2>
-      <p className="learning-path-section-description">{data.description}</p>
-
       {/* Legend */}
       <div className="learning-path-legend">
         <div className="learning-path-legend-item">
