@@ -146,11 +146,11 @@
       },
       {
         "id": "vuln-scan",
-        "name": "Vulnerability Assessment with Vulnerability Scanner",
+        "name": "Vulnerability assessment using vulnerability scanner",
         "description": "Course on working with vulnerability scanners to assess infrastructure security.",
         "x": 350,
         "y": 150,
-        "track": "purple"
+        "track": "red"
       },
       {
         "id": "att-ck",
@@ -158,7 +158,7 @@
         "description": "Course on infrastructure security assessment. 100+ practical cases for TTP training in Red Team projects.",
         "x": 650,
         "y": 150,
-        "track": "purple"
+        "track": "red"
       },
       {
         "id": "ethical-hacking",
@@ -166,7 +166,7 @@
         "description": "Course on ethical hacking and penetration testing.",
         "x": 950,
         "y": 50,
-        "track": "purple"
+        "track": "red"
       },
       {
         "id": "waf",
@@ -194,7 +194,7 @@
       },
       {
         "id": "complex-investigation",
-        "name": "Comprehensive Investigation of Cyberattacks",
+        "name": "Comprehensive investigation of cyberattacks",
         "description": "Course on investigating complex cyber attacks using multiple security tools. Less theory, more practice on real attack chains.",
         "x": 950,
         "y": 300,
@@ -202,7 +202,7 @@
       },
       {
         "id": "realtime-investigation",
-        "name": "Real-time Cyber Attack Investigation",
+        "name": "Real-time cyberattack investigation",
         "description": "Advanced course on investigating incidents in real-time mode.",
         "x": 1250,
         "y": 300,
@@ -210,7 +210,7 @@
       },
       {
         "id": "linux-artifacts",
-        "name": "Linux Artifacts Analysis",
+        "name": "Analysis of artifacts in Linux systems",
         "description": "Course on collecting and analyzing digital artifacts in Linux operating systems.",
         "x": 950,
         "y": 450,
@@ -218,7 +218,7 @@
       },
       {
         "id": "windows-artifacts",
-        "name": "Windows Artifacts Analysis",
+        "name": "Analysis of artifacts in Windows systems",
         "description": "Course on collecting and analyzing digital artifacts in Windows operating systems.",
         "x": 1250,
         "y": 450,
@@ -226,7 +226,7 @@
       },
       {
         "id": "memory-dumps",
-        "name": "Memory Dumps Analysis",
+        "name": "Memory Dump Analysis",
         "description": "Course on analyzing RAM content for incident investigation.",
         "x": 1550,
         "y": 450,
@@ -234,7 +234,7 @@
       },
       {
         "id": "volatile-data",
-        "name": "Volatile Data Analysis",
+        "name": "Energy-sensitive data analysis",
         "description": "Course on working with volatile data and preserving it for further analysis.",
         "x": 1850,
         "y": 450,
@@ -242,7 +242,7 @@
       },
       {
         "id": "tip",
-        "name": "Cyber Threat Analysis using TIP",
+        "name": "Cyber Threat Analysis with TIP",
         "description": "Course on threat analysis using Threat Intelligence Platform.",
         "x": 2150,
         "y": 380,
@@ -266,7 +266,7 @@
       },
       {
         "id": "cm",
-        "name": "Security Standards Compliance using CM",
+        "name": "Compliance with safety standards using CM",
         "description": "Course on ensuring information security standards compliance.",
         "x": 950,
         "y": 750,
@@ -285,12 +285,12 @@
         "name": "ICS Cyber Attack Analysis using PT ISIM",
         "description": "Course on investigating cyber attacks on technological infrastructure.",
         "x": 650,
-        "y": 1350,
+        "y": 900,
         "track": "green"
       },
       {
         "id": "sandbox",
-        "name": "Malware Detection with Sandbox",
+        "name": "Malware analysis",
         "description": "Course on detecting malicious software using sandboxes.",
         "x": 650,
         "y": 1050,
@@ -298,7 +298,7 @@
       },
       {
         "id": "malware-analysis",
-        "name": "Malware Analysis",
+        "name": "Malware analysis",
         "description": "Course on analyzing malicious software.",
         "x": 950,
         "y": 1050,
@@ -309,7 +309,7 @@
         "name": "Fixing Web Vulnerabilities using SAST",
         "description": "Course on source code analysis of web applications and web vulnerability remediation.",
         "x": 650,
-        "y": 1060,
+        "y": 1200,
         "track": "green"
       },
       {
@@ -317,7 +317,7 @@
         "name": "Web Application Security Analysis using DAST",
         "description": "Course on dynamic analysis of web application security.",
         "x": 950,
-        "y": 1060,
+        "y": 1200,
         "track": "green"
       },
       {
@@ -325,15 +325,15 @@
         "name": "Web Application Security Audit",
         "description": "Course on comprehensive web application security audit.",
         "x": 1250,
-        "y": 1060,
+        "y": 1200,
         "track": "green"
       },
       {
         "id": "cs",
-        "name": "Container Security using CS",
+        "name": "Securing Containerized Environments with CS",
         "description": "Course on securing containerized applications and environments.",
         "x": 650,
-        "y": 1190,
+        "y": 1350,
         "track": "green"
       },
       {
@@ -341,15 +341,15 @@
         "name": "DevSecOps Engineer",
         "description": "Course on integrating security into development and operations processes.",
         "x": 950,
-        "y": 1190,
+        "y": 1350,
         "track": "green"
       },
       {
         "id": "secure-dev",
-        "name": "Building Secure Development Processes",
+        "name": "Building SSDLC",
         "description": "Course on establishing and implementing secure development processes in the organization.",
         "x": 1550,
-        "y": 1060,
+        "y": 1200,
         "track": "green"
       },
       {
