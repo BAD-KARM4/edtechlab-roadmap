@@ -601,7 +601,7 @@ button {
   }
 
   .hero-title {
-    font-size: clamp(44px, 8vw, 60px);
+    font-size: clamp(44px, 8vw, 42px);
   }
 
   .roadmap-timeline-line {
