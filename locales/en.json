@@ -17,7 +17,7 @@
       "items": [
         {
           "id": "oss-nta-course",
-          "name": "OSS Products in Network Attack Analysis using NTA",
+          "name": "OSS tools in Network Attack Analysis using NTA",
           "description": "8 new case studies on the open-source tools Arkime and Wireshark. In total, the course contains 40 practical cases."
         },
         {
@@ -116,12 +116,12 @@
         },
         {
           "id": "oss-waf",
-          "name": "OSS Product in Web Application Attack Analysis using WAF",
+          "name": "OSS tools in Web Application Attack Analysis using WAF",
           "description": "New cases on SafeLine. Total of 35 practical cases ready."
         },
         {
           "id": "oss-siem",
-          "name": "OSS Product in Security Event Analysis using SIEM",
+          "name": "OSS tools in Security Event Analysis using SIEM",
           "description": "New cases on Wazuh. Course will have 35 practical cases in total."
         },
         {
