@@ -220,7 +220,7 @@ export function LearningPath({ data, locale }: LearningPathProps) {
                       ry="8"
                       fill={colors.fill}
                       stroke={colors.stroke}
-                      strokeWidth={isHovered ? 3 : 2}
+                      strokeWidth={2}
                       className="learning-path-node-bg"
                     />
 
