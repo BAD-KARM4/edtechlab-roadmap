@@ -290,7 +290,7 @@
       },
       {
         "id": "sandbox",
-        "name": "Malware analysis",
+        "name": "Malware detection using Sandbox",
         "description": "Course on detecting malicious software using sandboxes.",
         "x": 650,
         "y": 1050,
