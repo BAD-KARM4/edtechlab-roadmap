@@ -205,13 +205,19 @@ export function LearningPath({ data, locale }: LearningPathProps) {
                 const toNode = data.nodes.find(n => n.id === edge.to)
                 if (!fromNode || !toNode) return null
 
-                // Специальный случай: стрелка от realtime-investigation к purple-team - синяя
+                // Специальные случаи для стрелок
                 let pathColor = trackColors[toNode.track].stroke
                 let arrowheadTrack = toNode.track
                 
+                // Стрелка от realtime-investigation к purple-team - синяя
                 if (edge.from === 'realtime-investigation' && edge.to === 'purple-team') {
                   pathColor = trackColors.blue.stroke
                   arrowheadTrack = 'blue'
+                }
+                // Стрелки от att-ck и ethical-hacking к purple-team - красные
+                else if ((edge.from === 'att-ck' || edge.from === 'ethical-hacking') && edge.to === 'purple-team') {
+                  pathColor = trackColors.red.stroke
+                  arrowheadTrack = 'red'
                 }
 
                 const isActive = hoveredNode === edge.from || hoveredNode === edge.to
