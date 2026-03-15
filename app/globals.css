@@ -1045,7 +1045,10 @@ button {
 }
 
 .view-switcher-button {
-  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.03);
@@ -1059,6 +1062,10 @@ button {
     border-color 0.22s ease,
     transform 0.22s ease;
   white-space: nowrap;
+}
+
+.view-switcher-button svg {
+  flex-shrink: 0;
 }
 
 .view-switcher-button:hover {
