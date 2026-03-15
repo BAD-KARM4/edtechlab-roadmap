@@ -22,18 +22,16 @@ export function ContentView({
 
   return (
     <>
+      {/* Плавающий переключатель справа */}
+      <div className="view-switcher-floating">
+        <ViewSwitcher currentView={currentView} onSwitch={setCurrentView} />
+      </div>
+      
       {currentView === 'roadmap' ? (
         <Roadmap data={roadmapData} />
       ) : (
         <LearningPath data={learningPathData} locale={locale} />
       )}
-      
-      {/* Переключатель между секциями */}
-      <div className="view-switcher-section">
-        <div className="container">
-          <ViewSwitcher currentView={currentView} onSwitch={setCurrentView} />
-        </div>
-      </div>
     </>
   )
 }

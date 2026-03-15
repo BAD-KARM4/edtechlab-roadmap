@@ -15,16 +15,18 @@ export function ViewSwitcher({ currentView, onSwitch }: ViewSwitcherProps) {
         aria-selected={currentView === 'roadmap'}
         className={`view-switcher-button ${currentView === 'roadmap' ? 'active' : ''}`}
         onClick={() => onSwitch('roadmap')}
+        title="Продуктовая дорожная карта"
       >
-        Продуктовая дорожная карта
+        📊 Roadmap
       </button>
       <button
         role="tab"
         aria-selected={currentView === 'learning'}
         className={`view-switcher-button ${currentView === 'learning' ? 'active' : ''}`}
         onClick={() => onSwitch('learning')}
+        title="Дорожная карта обучения"
       >
-        Дорожная карта обучения
+        🎓 Learning
       </button>
     </div>
   )

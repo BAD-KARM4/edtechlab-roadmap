@@ -1021,30 +1021,36 @@ button {
 }
 
 /* View Switcher Styles */
-.view-switcher-section {
-  position: relative;
-  z-index: 2;
-  padding: 60px 0;
-  margin: 40px 0;
-  background:
-    linear-gradient(90deg, transparent, rgba(255, 59, 47, 0.08), transparent);
-  border-top: 1px solid rgba(255, 59, 47, 0.2);
-  border-bottom: 1px solid rgba(255, 59, 47, 0.2);
+.view-switcher-floating {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 8px;
+  border: 1px solid rgba(255, 59, 47, 0.3);
+  box-shadow:
+    0 0 0 1px rgba(255, 59, 47, 0.1) inset,
+    0 0 24px rgba(255, 59, 47, 0.15),
+    0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
 .view-switcher {
   display: flex;
-  gap: 12px;
-  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .view-switcher-button {
-  padding: 12px 24px;
-  border-radius: 10px;
+  padding: 10px 16px;
+  border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.03);
   color: var(--muted);
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 500;
   cursor: pointer;
   transition:
@@ -1052,6 +1058,7 @@ button {
     color 0.22s ease,
     border-color 0.22s ease,
     transform 0.22s ease;
+  white-space: nowrap;
 }
 
 .view-switcher-button:hover {
@@ -1074,19 +1081,13 @@ button {
 }
 
 @media (max-width: 760px) {
-  .view-switcher-section {
-    padding: 40px 0;
-    margin: 32px 0;
-  }
-
-  .view-switcher {
-    flex-direction: column;
-    gap: 8px;
+  .view-switcher-floating {
+    right: 12px;
+    padding: 6px;
   }
 
   .view-switcher-button {
-    width: 100%;
-    padding: 10px 16px;
-    font-size: 14px;
+    padding: 8px 12px;
+    font-size: 12px;
   }
 }
