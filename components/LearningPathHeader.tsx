@@ -11,11 +11,11 @@ export function LearningPathHeader({ title, description }: LearningPathHeaderPro
   return (
     <header className="learning-path-header container" role="banner">
       <div className="learning-path-header-bar">
+        <h1 className="learning-path-header-title">{title}</h1>
         <LocaleSwitcher />
       </div>
 
       <section id="top" className="learning-path-hero">
-        <h1 className="hero-title">{title}</h1>
         <p className="hero-description">{description}</p>
       </section>
     </header>

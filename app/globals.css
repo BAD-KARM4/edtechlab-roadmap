@@ -677,8 +677,14 @@ button {
   }
 
   .learning-path-header-bar {
-    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
     padding-bottom: 16px;
+  }
+
+  .learning-path-header-title {
+    font-size: clamp(38px, 14vw, 50px);
   }
 
   .roadmap-timeline-wrap {
@@ -818,10 +824,18 @@ button {
 .learning-path-header-bar {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   gap: 12px;
   min-height: 40px;
   padding-bottom: 20px;
+}
+
+.learning-path-header-title {
+  margin: 0;
+  font-size: clamp(42px, 5.6vw, 50px);
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+  text-wrap: balance;
 }
 
 .learning-path-hero {
