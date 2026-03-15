@@ -45,9 +45,6 @@ export function LearningPath({ data, locale }: LearningPathProps) {
     rectWidth: number,
     rectHeight: number
   ) => {
-    const dx = toX - fromX
-    const dy = toY - fromY
-    
     // Половины размеров
     const halfW = rectWidth / 2
     const halfH = rectHeight / 2
@@ -60,9 +57,14 @@ export function LearningPath({ data, locale }: LearningPathProps) {
     const diffX = centerX - fromX
     const diffY = centerY - fromY
     
+    // Защита от деления на 0
+    if (Math.abs(diffX) < 0.001 && Math.abs(diffY) < 0.001) {
+      return { x: centerX, y: centerY }
+    }
+    
     // Вычисляем масштаб для пересечения с границей
-    const scaleX = halfW / Math.abs(diffX)
-    const scaleY = halfH / Math.abs(diffY)
+    const scaleX = Math.abs(diffX) > 0.001 ? halfW / Math.abs(diffX) : Infinity
+    const scaleY = Math.abs(diffY) > 0.001 ? halfH / Math.abs(diffY) : Infinity
     
     // Выбираем меньший масштаб (ближняя граница)
     const scale = Math.min(scaleX, scaleY)
