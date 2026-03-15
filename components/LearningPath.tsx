@@ -194,7 +194,6 @@ export function LearningPath({ data, locale }: LearningPathProps) {
                       height={NODE_HEIGHT}
                     >
                       <div
-                        xmlns="http://www.w3.org/1999/xhtml"
                         style={{
                           width: '100%',
                           height: '100%',
