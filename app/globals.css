@@ -839,14 +839,11 @@ button {
 }
 
 .learning-path-node {
-  transition:
-    filter 0.2s ease,
-    transform 0.2s ease;
+  transition: filter 0.2s ease;
 }
 
 .learning-path-node:hover {
   filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
-  transform: scale(1.02);
 }
 
 .learning-path-node-bg {
