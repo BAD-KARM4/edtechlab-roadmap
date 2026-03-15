@@ -862,6 +862,11 @@ button {
 .learning-path-node-text {
   pointer-events: none;
   user-select: none;
+  color: #ffffff;
+}
+
+.learning-path-node-text tspan {
+  fill: #ffffff;
 }
 
 /* Learning Path Modal */

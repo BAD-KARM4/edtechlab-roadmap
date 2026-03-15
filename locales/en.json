@@ -165,7 +165,7 @@
         "name": "Ethical Hacking",
         "description": "Course on ethical hacking and penetration testing.",
         "x": 800,
-        "y": 100,
+        "y": 80,
         "track": "red"
       },
       {
@@ -173,7 +173,7 @@
         "name": "Web Application Attack Analysis using WAF",
         "description": "Course on analyzing and preventing web application attacks using WAF.",
         "x": 560,
-        "y": 320,
+        "y": 280,
         "track": "blue"
       },
       {
@@ -189,7 +189,7 @@
         "name": "Network Attack Analysis using NTA",
         "description": "Course on detecting and analyzing network attacks using NTA technologies.",
         "x": 560,
-        "y": 480,
+        "y": 520,
         "track": "blue"
       },
       {
@@ -197,7 +197,7 @@
         "name": "Comprehensive Investigation of Cyberattacks",
         "description": "Course on investigating complex cyber attacks using multiple security tools. Less theory, more practice on real attack chains.",
         "x": 800,
-        "y": 320,
+        "y": 280,
         "track": "blue"
       },
       {
@@ -205,7 +205,7 @@
         "name": "Real-time Cyber Attack Investigation",
         "description": "Advanced course on investigating incidents in real-time mode.",
         "x": 1040,
-        "y": 320,
+        "y": 280,
         "track": "blue"
       },
       {
@@ -213,7 +213,7 @@
         "name": "Linux Artifacts Analysis",
         "description": "Course on collecting and analyzing digital artifacts in Linux operating systems.",
         "x": 800,
-        "y": 480,
+        "y": 520,
         "track": "blue"
       },
       {
@@ -221,7 +221,7 @@
         "name": "Windows Artifacts Analysis",
         "description": "Course on collecting and analyzing digital artifacts in Windows operating systems.",
         "x": 1040,
-        "y": 480,
+        "y": 520,
         "track": "blue"
       },
       {
@@ -229,7 +229,7 @@
         "name": "Memory Dumps Analysis",
         "description": "Course on analyzing RAM content for incident investigation.",
         "x": 1280,
-        "y": 480,
+        "y": 520,
         "track": "blue"
       },
       {
@@ -237,7 +237,7 @@
         "name": "Volatile Data Analysis",
         "description": "Course on working with volatile data and preserving it for further analysis.",
         "x": 1520,
-        "y": 480,
+        "y": 520,
         "track": "blue"
       },
       {
@@ -245,7 +245,7 @@
         "name": "Cyber Threat Analysis using TIP",
         "description": "Course on threat analysis using Threat Intelligence Platform.",
         "x": 1760,
-        "y": 420,
+        "y": 460,
         "track": "blue"
       },
       {
@@ -253,7 +253,7 @@
         "name": "Threat Detection with EDR",
         "description": "Course on detecting and analyzing threats at endpoints using EDR.",
         "x": 1760,
-        "y": 540,
+        "y": 580,
         "track": "blue"
       },
       {

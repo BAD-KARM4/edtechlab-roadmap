@@ -8,8 +8,9 @@ interface LearningPathProps {
   locale: string
 }
 
-const NODE_WIDTH = 200
-const NODE_HEIGHT = 70
+const NODE_WIDTH = 220
+const NODE_HEIGHT = 100
+const NODE_PADDING = 16
 
 const trackColors = {
   common: { stroke: '#666666', fill: 'rgba(102, 102, 102, 0.1)' },
@@ -30,17 +31,29 @@ export function LearningPath({ data, locale }: LearningPathProps) {
 
   const svgHeight = useMemo(() => {
     const maxY = Math.max(...data.nodes.map(n => n.y))
-    return maxY + NODE_HEIGHT + 100
+    return maxY + NODE_HEIGHT + 200
   }, [data.nodes])
 
-  // Получаем путь для стрелки
+  // Получаем путь для стрелки (до края прямоугольника)
   const getEdgePath = (fromNode: LearningPathNode, toNode: LearningPathNode) => {
     const startX = fromNode.x + NODE_WIDTH / 2
     const startY = fromNode.y + NODE_HEIGHT / 2
     const endX = toNode.x + NODE_WIDTH / 2
     const endY = toNode.y + NODE_HEIGHT / 2
 
-    return `M ${startX} ${startY} L ${endX} ${endY}`
+    // Вычисляем направление
+    const dx = endX - startX
+    const dy = endY - startY
+    const distance = Math.sqrt(dx * dx + dy * dy)
+    
+    // Останавливаемся за NODE_PADDING до края прямоугольника
+    const padding = NODE_PADDING + 10
+    const ratio = (distance - padding) / distance
+    
+    const newEndX = startX + dx * ratio
+    const newEndY = startY + dy * ratio
+
+    return `M ${startX} ${startY} L ${newEndX} ${newEndY}`
   }
 
   return (
@@ -174,39 +187,38 @@ export function LearningPath({ data, locale }: LearningPathProps) {
                       className="learning-path-node-bg"
                     />
 
-                    <text
-                      x={node.x + NODE_WIDTH / 2}
-                      y={node.y + NODE_HEIGHT / 2}
-                      textAnchor="middle"
-                      dominantBaseline="middle"
-                      className="learning-path-node-text"
-                      fill="#ffffff"
-                      fontSize="13"
-                      fontWeight="500"
+                    <foreignObject
+                      x={node.x}
+                      y={node.y}
+                      width={NODE_WIDTH}
+                      height={NODE_HEIGHT}
                     >
-                      {node.name.length > 35
-                        ? node.name.split(' ').reduce((lines: string[], word: string, i: number) => {
-                            const lastLine = lines[lines.length - 1] || ''
-                            if (lastLine.length + word.length < 30) {
-                              lines[lines.length - 1] = lastLine + (lastLine ? ' ' : '') + word
-                            } else {
-                              lines.push(word)
-                            }
-                            return lines
-                          }, []).slice(0, 3).map((line: string, i: number, arr: string[]) => (
-                            <tspan
-                              key={i}
-                              x={node.x + NODE_WIDTH / 2}
-                              dy={i === 0 ? 0 : 16}
-                              fill="#ffffff"
-                            >
-                              {line}
-                              {i < arr.length - 1 && arr.length > 3 && i === arr.length - 2 && '...'}
-                            </tspan>
-                          ))
-                        : node.name
-                      }
-                    </text>
+                      <div
+                        xmlns="http://www.w3.org/1999/xhtml"
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          textAlign: 'center',
+                          padding: '8px 12px',
+                          boxSizing: 'border-box',
+                        }}
+                      >
+                        <span
+                          style={{
+                            color: '#ffffff',
+                            fontSize: '13px',
+                            fontWeight: 500,
+                            lineHeight: 1.4,
+                            wordWrap: 'break-word',
+                          }}
+                        >
+                          {node.name}
+                        </span>
+                      </div>
+                    </foreignObject>
                   </g>
                 )
               })}
