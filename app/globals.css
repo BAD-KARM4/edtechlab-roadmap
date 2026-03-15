@@ -785,3 +785,295 @@ button {
 .locale-switcher-link-active:hover {
   background: linear-gradient(180deg, rgba(255, 59, 47, 0.25), rgba(255, 59, 47, 0.12));
 }
+
+/* Learning Path Styles */
+.learning-path-section {
+  position: relative;
+  z-index: 2;
+  margin-top: 80px;
+  padding-top: 60px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.learning-path-section-title {
+  margin: 0 0 16px;
+  font-size: clamp(32px, 4vw, 42px);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  text-align: center;
+}
+
+.learning-path-section-description {
+  margin: 0 auto 40px;
+  max-width: 600px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.learning-path-container {
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 20px 0;
+}
+
+.learning-path-wrapper {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.learning-path-svg {
+  width: 100%;
+  height: auto;
+  max-width: 2000px;
+}
+
+.learning-path-edges path {
+  transition:
+    opacity 0.3s ease,
+    stroke-width 0.3s ease;
+}
+
+.learning-path-node {
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+
+.learning-path-node:hover {
+  transform: scale(1.02);
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.3));
+}
+
+.learning-path-node-bg {
+  transition:
+    stroke-width 0.2s ease,
+    fill 0.2s ease;
+}
+
+.learning-path-node:hover .learning-path-node-bg {
+  stroke-width: 3px;
+}
+
+.learning-path-node-text {
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Learning Path Modal */
+.learning-path-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.learning-path-modal {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  padding: 32px;
+  border-radius: 20px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02)),
+    linear-gradient(135deg, rgba(255, 59, 47, 0.1), rgba(255, 59, 47, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 0 0 1px rgba(255, 59, 47, 0.05) inset,
+    0 0 48px rgba(255, 59, 47, 0.08),
+    0 20px 60px rgba(0, 0, 0, 0.4);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.learning-path-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--muted);
+  font-size: 24px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.learning-path-modal-close:hover {
+  background: rgba(255, 59, 47, 0.2);
+  color: var(--text);
+}
+
+.learning-path-modal-track {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  opacity: 0.9;
+}
+
+.learning-path-modal-title {
+  margin: 0 0 16px;
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+.learning-path-modal-description {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* Track legend */
+.learning-path-legend {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.learning-path-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.learning-path-legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 2px solid;
+}
+
+.learning-path-legend-color.common { border-color: #666666; }
+.learning-path-legend-color.red { border-color: #ff3b2f; }
+.learning-path-legend-color.blue { border-color: #0066ff; }
+.learning-path-legend-color.green { border-color: #00cc66; }
+
+@media (max-width: 760px) {
+  .learning-path-section {
+    margin-top: 40px;
+    padding-top: 32px;
+  }
+
+  .learning-path-section-title {
+    font-size: 28px;
+  }
+
+  .learning-path-section-description {
+    font-size: 14px;
+  }
+
+  .learning-path-modal {
+    padding: 24px 20px;
+  }
+
+  .learning-path-modal-title {
+    font-size: 20px;
+  }
+
+  .learning-path-modal-description {
+    font-size: 14px;
+  }
+
+  .learning-path-legend {
+    gap: 16px;
+  }
+}
+
+/* View Switcher Styles */
+.view-switcher {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.view-switcher-button {
+  padding: 12px 24px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background-color 0.22s ease,
+    color 0.22s ease,
+    border-color 0.22s ease,
+    transform 0.22s ease;
+}
+
+.view-switcher-button:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  transform: translateY(-1px);
+}
+
+.view-switcher-button.active {
+  background: linear-gradient(180deg, rgba(255, 59, 47, 0.2), rgba(255, 59, 47, 0.1));
+  color: var(--text);
+  border-color: rgba(255, 59, 47, 0.3);
+  box-shadow:
+    0 0 0 1px rgba(255, 59, 47, 0.1) inset,
+    0 0 16px rgba(255, 59, 47, 0.15);
+}
+
+.view-switcher-button.active:hover {
+  background: linear-gradient(180deg, rgba(255, 59, 47, 0.25), rgba(255, 59, 47, 0.12));
+}
+
+@media (max-width: 760px) {
+  .view-switcher {
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+
+  .view-switcher-button {
+    width: 100%;
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}

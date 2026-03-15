@@ -131,5 +131,268 @@
         }
       ]
     }
-  ]
+  ],
+  "learningPath": {
+    "title": "Learning Path",
+    "description": "Interactive cybersecurity skills development roadmap",
+    "nodes": [
+      {
+        "id": "intro-cybersec",
+        "name": "Introduction to Cybersecurity",
+        "description": "Basic IT fundamentals course with cybersecurity focus. 4 modules covering OS administration, computer networking, and web application deployment.",
+        "x": 80,
+        "y": 400,
+        "track": "common"
+      },
+      {
+        "id": "vuln-scan",
+        "name": "Vulnerability Assessment with Vulnerability Scanner",
+        "description": "Course on working with vulnerability scanners to assess infrastructure security.",
+        "x": 320,
+        "y": 180,
+        "track": "red"
+      },
+      {
+        "id": "att-ck",
+        "name": "ATT&CK Playbook: TTP in Practice",
+        "description": "Course on infrastructure security assessment. 100+ practical cases for TTP training in Red Team projects.",
+        "x": 560,
+        "y": 180,
+        "track": "red"
+      },
+      {
+        "id": "ethical-hacking",
+        "name": "Ethical Hacking",
+        "description": "Course on ethical hacking and penetration testing.",
+        "x": 800,
+        "y": 100,
+        "track": "red"
+      },
+      {
+        "id": "waf",
+        "name": "Web Application Attack Analysis using WAF",
+        "description": "Course on analyzing and preventing web application attacks using WAF.",
+        "x": 560,
+        "y": 320,
+        "track": "blue"
+      },
+      {
+        "id": "siem",
+        "name": "Security Event Analysis using SIEM",
+        "description": "Course on security event analysis and incident monitoring using SIEM systems.",
+        "x": 560,
+        "y": 400,
+        "track": "blue"
+      },
+      {
+        "id": "nta",
+        "name": "Network Attack Analysis using NTA",
+        "description": "Course on detecting and analyzing network attacks using NTA technologies.",
+        "x": 560,
+        "y": 480,
+        "track": "blue"
+      },
+      {
+        "id": "complex-investigation",
+        "name": "Comprehensive Investigation of Cyberattacks",
+        "description": "Course on investigating complex cyber attacks using multiple security tools. Less theory, more practice on real attack chains.",
+        "x": 800,
+        "y": 320,
+        "track": "blue"
+      },
+      {
+        "id": "realtime-investigation",
+        "name": "Real-time Cyber Attack Investigation",
+        "description": "Advanced course on investigating incidents in real-time mode.",
+        "x": 1040,
+        "y": 320,
+        "track": "blue"
+      },
+      {
+        "id": "linux-artifacts",
+        "name": "Linux Artifacts Analysis",
+        "description": "Course on collecting and analyzing digital artifacts in Linux operating systems.",
+        "x": 800,
+        "y": 480,
+        "track": "blue"
+      },
+      {
+        "id": "windows-artifacts",
+        "name": "Windows Artifacts Analysis",
+        "description": "Course on collecting and analyzing digital artifacts in Windows operating systems.",
+        "x": 1040,
+        "y": 480,
+        "track": "blue"
+      },
+      {
+        "id": "memory-dumps",
+        "name": "Memory Dumps Analysis",
+        "description": "Course on analyzing RAM content for incident investigation.",
+        "x": 1280,
+        "y": 480,
+        "track": "blue"
+      },
+      {
+        "id": "volatile-data",
+        "name": "Volatile Data Analysis",
+        "description": "Course on working with volatile data and preserving it for further analysis.",
+        "x": 1520,
+        "y": 480,
+        "track": "blue"
+      },
+      {
+        "id": "tip",
+        "name": "Cyber Threat Analysis using TIP",
+        "description": "Course on threat analysis using Threat Intelligence Platform.",
+        "x": 1760,
+        "y": 420,
+        "track": "blue"
+      },
+      {
+        "id": "edr",
+        "name": "Threat Detection with EDR",
+        "description": "Course on detecting and analyzing threats at endpoints using EDR.",
+        "x": 1760,
+        "y": 540,
+        "track": "blue"
+      },
+      {
+        "id": "am",
+        "name": "Asset Management using AM",
+        "description": "Course on working with organizational assets and managing them.",
+        "x": 560,
+        "y": 580,
+        "track": "green"
+      },
+      {
+        "id": "cm",
+        "name": "Security Standards Compliance using CM",
+        "description": "Course on ensuring information security standards compliance.",
+        "x": 800,
+        "y": 580,
+        "track": "green"
+      },
+      {
+        "id": "vm",
+        "name": "Vulnerability Remediation using VM",
+        "description": "Course on vulnerability management and remediation.",
+        "x": 1040,
+        "y": 580,
+        "track": "green"
+      },
+      {
+        "id": "ics-isim",
+        "name": "ICS Cyber Attack Analysis using PT ISIM",
+        "description": "Course on investigating cyber attacks on technological infrastructure.",
+        "x": 560,
+        "y": 660,
+        "track": "green"
+      },
+      {
+        "id": "sandbox",
+        "name": "Malware Detection with Sandbox",
+        "description": "Course on detecting malicious software using sandboxes.",
+        "x": 560,
+        "y": 740,
+        "track": "green"
+      },
+      {
+        "id": "malware-analysis",
+        "name": "Malware Analysis",
+        "description": "Course on analyzing malicious software.",
+        "x": 800,
+        "y": 740,
+        "track": "green"
+      },
+      {
+        "id": "sast",
+        "name": "Fixing Web Vulnerabilities using SAST",
+        "description": "Course on source code analysis of web applications and web vulnerability remediation.",
+        "x": 560,
+        "y": 820,
+        "track": "green"
+      },
+      {
+        "id": "dast",
+        "name": "Web Application Security Analysis using DAST",
+        "description": "Course on dynamic analysis of web application security.",
+        "x": 800,
+        "y": 820,
+        "track": "green"
+      },
+      {
+        "id": "web-audit",
+        "name": "Web Application Security Audit",
+        "description": "Course on comprehensive web application security audit.",
+        "x": 1040,
+        "y": 820,
+        "track": "green"
+      },
+      {
+        "id": "cs",
+        "name": "Container Security using CS",
+        "description": "Course on securing containerized applications and environments.",
+        "x": 560,
+        "y": 900,
+        "track": "green"
+      },
+      {
+        "id": "devsecops",
+        "name": "DevSecOps Engineer",
+        "description": "Course on integrating security into development and operations processes.",
+        "x": 800,
+        "y": 900,
+        "track": "green"
+      },
+      {
+        "id": "secure-dev",
+        "name": "Building Secure Development Processes",
+        "description": "Course on establishing and implementing secure development processes in the organization.",
+        "x": 1280,
+        "y": 820,
+        "track": "green"
+      },
+      {
+        "id": "purple-team",
+        "name": "Purple Team",
+        "description": "Advanced course on combining offensive and defensive techniques to improve security.",
+        "x": 1400,
+        "y": 180,
+        "track": "red"
+      }
+    ],
+    "edges": [
+      { "from": "intro-cybersec", "to": "vuln-scan" },
+      { "from": "vuln-scan", "to": "att-ck" },
+      { "from": "att-ck", "to": "ethical-hacking" },
+      { "from": "ethical-hacking", "to": "purple-team" },
+      { "from": "intro-cybersec", "to": "waf" },
+      { "from": "intro-cybersec", "to": "siem" },
+      { "from": "intro-cybersec", "to": "nta" },
+      { "from": "waf", "to": "complex-investigation" },
+      { "from": "siem", "to": "complex-investigation" },
+      { "from": "nta", "to": "complex-investigation" },
+      { "from": "complex-investigation", "to": "realtime-investigation" },
+      { "from": "siem", "to": "linux-artifacts" },
+      { "from": "linux-artifacts", "to": "windows-artifacts" },
+      { "from": "windows-artifacts", "to": "memory-dumps" },
+      { "from": "memory-dumps", "to": "volatile-data" },
+      { "from": "volatile-data", "to": "tip" },
+      { "from": "volatile-data", "to": "edr" },
+      { "from": "intro-cybersec", "to": "am" },
+      { "from": "am", "to": "cm" },
+      { "from": "cm", "to": "vm" },
+      { "from": "intro-cybersec", "to": "ics-isim" },
+      { "from": "intro-cybersec", "to": "sandbox" },
+      { "from": "sandbox", "to": "malware-analysis" },
+      { "from": "intro-cybersec", "to": "sast" },
+      { "from": "sast", "to": "dast" },
+      { "from": "dast", "to": "web-audit" },
+      { "from": "web-audit", "to": "secure-dev" },
+      { "from": "intro-cybersec", "to": "cs" },
+      { "from": "cs", "to": "devsecops" },
+      { "from": "att-ck", "to": "purple-team" },
+      { "from": "realtime-investigation", "to": "purple-team" }
+    ]
+  }
 }

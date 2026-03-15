@@ -1,4 +1,4 @@
-import { Roadmap } from '@/components/Roadmap'
+import { ContentView } from './ContentView'
 import { getTranslations, type Locale } from '@/lib/i18n'
 import type { RoadmapData } from '@/lib/roadmap'
 
@@ -9,7 +9,7 @@ interface PageProps {
 export default async function Page({ params }: PageProps) {
   const { locale } = await params
   const localeData = await getTranslations(locale as Locale)
-  
+
   // Преобразуем LocaleData в RoadmapData
   const data: RoadmapData = {
     productName: localeData.common.productName,
@@ -20,5 +20,14 @@ export default async function Page({ params }: PageProps) {
     periods: localeData.periods,
   }
 
-  return <Roadmap data={data} />
+  // Данные для Learning Path
+  const learningPathData = localeData.learningPath
+
+  return (
+    <ContentView
+      roadmapData={data}
+      learningPathData={learningPathData}
+      locale={locale}
+    />
+  )
 }

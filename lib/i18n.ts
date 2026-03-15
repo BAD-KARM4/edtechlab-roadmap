@@ -6,6 +6,27 @@ export const defaultLocale: Locale = 'ru'
 
 export const supportedLocales: Locale[] = ['ru', 'en']
 
+export interface LearningPathNode {
+  id: string
+  name: string
+  description: string
+  x: number
+  y: number
+  track: 'common' | 'red' | 'blue' | 'green'
+}
+
+export interface LearningPathEdge {
+  from: string
+  to: string
+}
+
+export interface LearningPathData {
+  title: string
+  description: string
+  nodes: LearningPathNode[]
+  edges: LearningPathEdge[]
+}
+
 export interface LocaleData {
   meta: {
     tabTitle: string
@@ -17,6 +38,7 @@ export interface LocaleData {
     title: string
   }
   periods: RoadmapPeriod[]
+  learningPath: LearningPathData
 }
 
 export async function getTranslations(locale: Locale): Promise<LocaleData> {
