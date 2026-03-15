@@ -672,6 +672,15 @@ button {
     font-size: 15px;
   }
 
+  .learning-path-header {
+    padding-top: 24px;
+  }
+
+  .learning-path-header-bar {
+    justify-content: center;
+    padding-bottom: 16px;
+  }
+
   .roadmap-timeline-wrap {
     margin-bottom: 30px;
   }
@@ -796,6 +805,27 @@ button {
 
 .locale-switcher-link-active:hover {
   background: linear-gradient(180deg, rgba(255, 59, 47, 0.25), rgba(255, 59, 47, 0.12));
+}
+
+/* Learning Path Header Styles */
+.learning-path-header {
+  position: relative;
+  z-index: 2;
+  padding-top: 40px;
+  margin-bottom: 0;
+}
+
+.learning-path-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  min-height: 40px;
+  padding-bottom: 20px;
+}
+
+.learning-path-hero {
+  margin-bottom: 34px;
 }
 
 /* Learning Path Styles */

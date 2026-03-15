@@ -1,7 +1,6 @@
 'use client'
 
 import { LocaleSwitcher } from '@/components/LocaleSwitcher'
-import { basePath } from '@/lib/config'
 
 interface LearningPathHeaderProps {
   title: string
@@ -10,23 +9,12 @@ interface LearningPathHeaderProps {
 
 export function LearningPathHeader({ title, description }: LearningPathHeaderProps) {
   return (
-    <header className="site-header container" role="banner">
-      <div className="site-header-bar">
-        <a href="#main-content" className="brand-block" aria-label="PT EdTechLab">
-          <img
-            src={`${basePath}/pt-edtechlab-logo.png`}
-            alt="PT EdTechLab"
-            className="brand-logo-image"
-          />
-          <div className="brand-copy">
-            <div className="brand-name">PT EdTechLab</div>
-            <div className="brand-subtitle">Positive Technologies</div>
-          </div>
-        </a>
+    <header className="learning-path-header container" role="banner">
+      <div className="learning-path-header-bar">
         <LocaleSwitcher />
       </div>
 
-      <section id="top" className="hero container">
+      <section id="top" className="learning-path-hero">
         <h1 className="hero-title">{title}</h1>
         <p className="hero-description">{description}</p>
       </section>
