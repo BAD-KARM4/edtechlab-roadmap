@@ -31,29 +31,90 @@ export function LearningPath({ data, locale }: LearningPathProps) {
 
   const svgHeight = useMemo(() => {
     const maxY = Math.max(...data.nodes.map(n => n.y))
-    return maxY + NODE_HEIGHT + 200
+    return maxY + NODE_HEIGHT + 250
   }, [data.nodes])
 
-  // Получаем путь для стрелки (до края прямоугольника)
-  const getEdgePath = (fromNode: LearningPathNode, toNode: LearningPathNode) => {
-    const startX = fromNode.x + NODE_WIDTH / 2
-    const startY = fromNode.y + NODE_HEIGHT / 2
-    const endX = toNode.x + NODE_WIDTH / 2
-    const endY = toNode.y + NODE_HEIGHT / 2
-
-    // Вычисляем направление
-    const dx = endX - startX
-    const dy = endY - startY
-    const distance = Math.sqrt(dx * dx + dy * dy)
+  // Вычисляем точку пересечения линии с границей прямоугольника
+  const getBorderIntersection = (
+    fromX: number,
+    fromY: number,
+    toX: number,
+    toY: number,
+    rectX: number,
+    rectY: number,
+    rectWidth: number,
+    rectHeight: number
+  ) => {
+    const dx = toX - fromX
+    const dy = toY - fromY
     
-    // Останавливаемся за NODE_PADDING до края прямоугольника
-    const padding = NODE_PADDING + 10
+    // Половины размеров
+    const halfW = rectWidth / 2
+    const halfH = rectHeight / 2
+    
+    // Центр прямоугольника
+    const centerX = rectX + halfW
+    const centerY = rectY + halfH
+    
+    // Разница от центра до целевой точки
+    const diffX = centerX - fromX
+    const diffY = centerY - fromY
+    
+    // Вычисляем масштаб для пересечения с границей
+    const scaleX = halfW / Math.abs(diffX)
+    const scaleY = halfH / Math.abs(diffY)
+    
+    // Выбираем меньший масштаб (ближняя граница)
+    const scale = Math.min(scaleX, scaleY)
+    
+    return {
+      x: fromX + diffX * scale,
+      y: fromY + diffY * scale
+    }
+  }
+
+  // Получаем путь для стрелки (от границы до границы прямоугольника)
+  const getEdgePath = (fromNode: LearningPathNode, toNode: LearningPathNode) => {
+    const fromCenterX = fromNode.x + NODE_WIDTH / 2
+    const fromCenterY = fromNode.y + NODE_HEIGHT / 2
+    const toCenterX = toNode.x + NODE_WIDTH / 2
+    const toCenterY = toNode.y + NODE_HEIGHT / 2
+
+    // Точка выхода из исходного прямоугольника
+    const startPoint = getBorderIntersection(
+      fromCenterX,
+      fromCenterY,
+      toCenterX,
+      toCenterY,
+      fromNode.x,
+      fromNode.y,
+      NODE_WIDTH,
+      NODE_HEIGHT
+    )
+
+    // Точка входа в целевой прямоугольник (с отступом)
+    const endPoint = getBorderIntersection(
+      toCenterX,
+      toCenterY,
+      fromCenterX,
+      fromCenterY,
+      toNode.x,
+      toNode.y,
+      NODE_WIDTH,
+      NODE_HEIGHT
+    )
+
+    // Небольшой отступ, чтобы стрелка не заходила на текст
+    const padding = 8
+    const dx = endPoint.x - startPoint.x
+    const dy = endPoint.y - startPoint.y
+    const distance = Math.sqrt(dx * dx + dy * dy)
     const ratio = (distance - padding) / distance
     
-    const newEndX = startX + dx * ratio
-    const newEndY = startY + dy * ratio
+    const finalEndX = startPoint.x + dx * ratio
+    const finalEndY = startPoint.y + dy * ratio
 
-    return `M ${startX} ${startY} L ${newEndX} ${newEndY}`
+    return `M ${startPoint.x} ${startPoint.y} L ${finalEndX} ${finalEndY}`
   }
 
   return (
