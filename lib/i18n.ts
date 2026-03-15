@@ -1,5 +1,4 @@
 import type { RoadmapData, RoadmapPeriod, RoadmapItem } from './roadmap'
-import roadmapStructure from '@/data/roadmap-structure.json'
 
 export type Locale = 'ru' | 'en'
 
@@ -7,7 +6,7 @@ export const defaultLocale: Locale = 'ru'
 
 export const supportedLocales: Locale[] = ['ru', 'en']
 
-export interface Translations {
+export interface LocaleData {
   meta: {
     tabTitle: string
     description: string
@@ -17,89 +16,18 @@ export interface Translations {
     companyName: string
     title: string
   }
-  periods: Record<
-    string,
-    {
-      label: string
-      timeframe: string
-      summary: string
-    }
-  >
-  items: Record<
-    string,
-    {
-      name: string
-      description: string
-    }
-  >
+  periods: RoadmapPeriod[]
 }
 
-function getTranslationByKey(translations: Translations, key: string): string {
-  const parts = key.split('.')
-
-  let current: unknown = translations
-  for (const part of parts) {
-    if (typeof current === 'object' && current !== null && part in current) {
-      current = (current as Record<string, unknown>)[part]
-    } else {
-      return key
-    }
-  }
-
-  return typeof current === 'string' ? current : key
-}
-
-export async function getTranslations(locale: Locale): Promise<Translations> {
+export async function getTranslations(locale: Locale): Promise<LocaleData> {
   try {
     const module = await import(`@/locales/${locale}.json`)
-    return module.default as Translations
+    return module.default as LocaleData
   } catch (error) {
     console.error(`Failed to load translations for locale: ${locale}`, error)
     // Fallback to default locale
     const module = await import(`@/locales/${defaultLocale}.json`)
-    return module.default as Translations
-  }
-}
-
-export function buildRoadmapData(
-  translations: Translations
-): RoadmapData {
-  const structure = roadmapStructure as unknown as {
-    productName: string
-    companyName: string
-    title: string
-    tabTitle: string
-    metaDescription: string
-    periods: Array<{
-      id: string
-      label: string
-      timeframe: string
-      summary: string
-      items: Array<{
-        id: string
-        name: string
-        description: string
-      }>
-    }>
-  }
-
-  return {
-    productName: getTranslationByKey(translations, structure.productName),
-    companyName: getTranslationByKey(translations, structure.companyName),
-    title: getTranslationByKey(translations, structure.title),
-    tabTitle: getTranslationByKey(translations, structure.tabTitle),
-    metaDescription: getTranslationByKey(translations, structure.metaDescription),
-    periods: structure.periods.map((period) => ({
-      id: period.id,
-      label: getTranslationByKey(translations, period.label),
-      timeframe: getTranslationByKey(translations, period.timeframe),
-      summary: getTranslationByKey(translations, period.summary),
-      items: period.items.map((item) => ({
-        id: item.id,
-        name: getTranslationByKey(translations, item.name),
-        description: getTranslationByKey(translations, item.description),
-      })),
-    })),
+    return module.default as LocaleData
   }
 }
 

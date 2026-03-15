@@ -7,11 +7,7 @@ interface PageProps {
 
 export default async function Page({ params }: PageProps) {
   const { locale } = await params
-  const translations = await getTranslations(locale as Locale)
-  
-  // Импортируем buildRoadmapData здесь, чтобы избежать circular imports
-  const { buildRoadmapData } = await import('@/lib/i18n')
-  const data = buildRoadmapData(translations)
+  const data = await getTranslations(locale as Locale)
 
   return <Roadmap data={data} />
 }
