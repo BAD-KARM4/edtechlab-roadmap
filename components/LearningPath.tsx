@@ -34,89 +34,77 @@ export function LearningPath({ data, locale }: LearningPathProps) {
     return maxY + NODE_HEIGHT + 250
   }, [data.nodes])
 
-  // Вычисляем точку пересечения линии с границей прямоугольника
-  const getBorderIntersection = (
-    fromX: number,
-    fromY: number,
-    toX: number,
-    toY: number,
-    rectX: number,
-    rectY: number,
-    rectWidth: number,
-    rectHeight: number
+  // Получаем точку на границе прямоугольника
+  const getEdgePoints = (
+    fromNode: LearningPathNode,
+    toNode: LearningPathNode
   ) => {
-    // Половины размеров
-    const halfW = rectWidth / 2
-    const halfH = rectHeight / 2
-    
-    // Центр прямоугольника
-    const centerX = rectX + halfW
-    const centerY = rectY + halfH
-    
-    // Разница от центра до целевой точки
-    const diffX = centerX - fromX
-    const diffY = centerY - fromY
-    
-    // Защита от деления на 0
-    if (Math.abs(diffX) < 0.001 && Math.abs(diffY) < 0.001) {
-      return { x: centerX, y: centerY }
-    }
-    
-    // Вычисляем масштаб для пересечения с границей
-    const scaleX = Math.abs(diffX) > 0.001 ? halfW / Math.abs(diffX) : Infinity
-    const scaleY = Math.abs(diffY) > 0.001 ? halfH / Math.abs(diffY) : Infinity
-    
-    // Выбираем меньший масштаб (ближняя граница)
-    const scale = Math.min(scaleX, scaleY)
-    
-    return {
-      x: fromX + diffX * scale,
-      y: fromY + diffY * scale
-    }
-  }
-
-  // Получаем путь для стрелки (от границы до границы прямоугольника)
-  const getEdgePath = (fromNode: LearningPathNode, toNode: LearningPathNode) => {
     const fromCenterX = fromNode.x + NODE_WIDTH / 2
     const fromCenterY = fromNode.y + NODE_HEIGHT / 2
     const toCenterX = toNode.x + NODE_WIDTH / 2
     const toCenterY = toNode.y + NODE_HEIGHT / 2
 
-    // Точка выхода из исходного прямоугольника
-    const startPoint = getBorderIntersection(
-      fromCenterX,
-      fromCenterY,
-      toCenterX,
-      toCenterY,
-      fromNode.x,
-      fromNode.y,
-      NODE_WIDTH,
-      NODE_HEIGHT
-    )
+    // Определяем, какое соединение преобладает
+    const dx = toCenterX - fromCenterX
+    const dy = toCenterY - fromCenterY
+    
+    let startX, startY, endX, endY
+    
+    // Если горизонтальное преобладает
+    if (Math.abs(dx) > Math.abs(dy)) {
+      // Стрелка идёт слева направо или справа налево
+      if (dx > 0) {
+        // Вправо: выходим из правой границы, входим в левую
+        startX = fromNode.x + NODE_WIDTH
+        startY = fromCenterY
+        endX = toNode.x
+        endY = toCenterY
+      } else {
+        // Влево: выходим из левой границы, входим в правую
+        startX = fromNode.x
+        startY = fromCenterY
+        endX = toNode.x + NODE_WIDTH
+        endY = toCenterY
+      }
+    } else {
+      // Стрелка идёт сверху вниз или снизу вверх
+      if (dy > 0) {
+        // Вниз: выходим из нижней границы, входим в верхнюю
+        startX = fromCenterX
+        startY = fromNode.y + NODE_HEIGHT
+        endX = toCenterX
+        endY = toNode.y
+      } else {
+        // Вверх: выходим из верхней границы, входим в нижнюю
+        startX = fromCenterX
+        startY = fromNode.y
+        endX = toCenterX
+        endY = toNode.y + NODE_HEIGHT
+      }
+    }
 
-    // Точка входа в целевой прямоугольник (с отступом)
-    const endPoint = getBorderIntersection(
-      toCenterX,
-      toCenterY,
-      fromCenterX,
-      fromCenterY,
-      toNode.x,
-      toNode.y,
-      NODE_WIDTH,
-      NODE_HEIGHT
-    )
+    return { startX, startY, endX, endY }
+  }
+
+  // Получаем путь для стрелки
+  const getEdgePath = (fromNode: LearningPathNode, toNode: LearningPathNode) => {
+    const { startX, startY, endX, endY } = getEdgePoints(fromNode, toNode)
 
     // Небольшой отступ, чтобы стрелка не заходила на текст
-    const padding = 8
-    const dx = endPoint.x - startPoint.x
-    const dy = endPoint.y - startPoint.y
+    const padding = 10
+    const dx = endX - startX
+    const dy = endY - startY
     const distance = Math.sqrt(dx * dx + dy * dy)
-    const ratio = (distance - padding) / distance
     
-    const finalEndX = startPoint.x + dx * ratio
-    const finalEndY = startPoint.y + dy * ratio
+    if (distance < padding) {
+      return `M ${startX} ${startY} L ${endX} ${endY}`
+    }
+    
+    const ratio = (distance - padding) / distance
+    const finalEndX = startX + dx * ratio
+    const finalEndY = startY + dy * ratio
 
-    return `M ${startPoint.x} ${startPoint.y} L ${finalEndX} ${finalEndY}`
+    return `M ${startX} ${startY} L ${finalEndX} ${finalEndY}`
   }
 
   return (
