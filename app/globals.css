@@ -595,3 +595,49 @@ button {
     right: 54px;
   }
 }
+
+/* Locale Switcher Styles */
+.locale-switcher {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.locale-switcher-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition:
+    background-color 0.22s ease,
+    color 0.22s ease,
+    border-color 0.22s ease,
+    transform 0.22s ease;
+}
+
+.locale-switcher-link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  transform: translateY(-1px);
+}
+
+.locale-switcher-link-active {
+  background: linear-gradient(180deg, rgba(255, 59, 47, 0.2), rgba(255, 59, 47, 0.1));
+  color: var(--text);
+  border-color: rgba(255, 59, 47, 0.3);
+  box-shadow:
+    0 0 0 1px rgba(255, 59, 47, 0.1) inset,
+    0 0 16px rgba(255, 59, 47, 0.15);
+}
+
+.locale-switcher-link-active:hover {
+  background: linear-gradient(180deg, rgba(255, 59, 47, 0.25), rgba(255, 59, 47, 0.12));
+}

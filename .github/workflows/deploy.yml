@@ -35,13 +35,13 @@ jobs:
       - name: Build static site
         run: npm run build
         env:
-          BASE_PATH: /${{ github.event.repository.name }}
+          NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
 
       - name: Show build output
         run: |
           echo "=== Contents of ./out directory ==="
-          ls -laR ./out | head -50
-          
+          ls -laR ./out | head -80
+
           echo -e "\n=== 🔍 Checking for critical files ==="
           if [ -f "./out/index.html" ]; then
             echo "index.html FOUND at root"
@@ -49,14 +49,22 @@ jobs:
           else
             echo "index.html MISSING at root!"
           fi
-          
-          if [ -f "./out/edtechlab-roadmap/index.html" ]; then
-            echo "index.html found in basePath folder"
+
+          echo -e "\n=== Checking locale directories ==="
+          if [ -d "./out/ru" ]; then
+            echo "✓ /ru/ directory exists"
+            ls -la ./out/ru/
+          else
+            echo "✗ /ru/ directory MISSING!"
           fi
-          
-          echo -e "\n=== First 30 lines of root index.html ==="
-          head -n 30 ./out/index.html 2>/dev/null || echo "File not accessible"
-          
+
+          if [ -d "./out/en" ]; then
+            echo "✓ /en/ directory exists"
+            ls -la ./out/en/
+          else
+            echo "✗ /en/ directory MISSING!"
+          fi
+
           echo -e "\n=== Checking for _next/static ==="
           ls -la ./out/_next/static 2>/dev/null || echo "_next/static not found"
 

@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState, useCallback } from 'react'
 import type { RoadmapData, RoadmapItem, RoadmapPeriod } from '@/lib/roadmap'
+import { LocaleSwitcher } from '@/components/LocaleSwitcher'
 
 function getValidPeriod(periods: RoadmapPeriod[], periodId: string) {
   return periods.find((period) => period.id === periodId) ?? periods[0]
@@ -11,7 +12,11 @@ function getValidItem(items: RoadmapItem[], itemId: string) {
   return items.find((item) => item.id === itemId) ?? items[0]
 }
 
-export function Roadmap({ data }: { data: RoadmapData }) {
+interface RoadmapProps {
+  data: RoadmapData
+}
+
+export function Roadmap({ data }: RoadmapProps) {
   const assetBase = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
   const [activePeriodId, setActivePeriodId] = useState(data.periods[0]?.id ?? '')
   const [activeItemId, setActiveItemId] = useState(data.periods[0]?.items[0]?.id ?? '')
@@ -157,6 +162,7 @@ export function Roadmap({ data }: { data: RoadmapData }) {
               <div className="brand-subtitle">{data.companyName}</div>
             </div>
           </a>
+          <LocaleSwitcher />
         </div>
       </header>
 
@@ -205,9 +211,9 @@ export function Roadmap({ data }: { data: RoadmapData }) {
 
         <div className="roadmap-body">
           <div className="roadmap-list-column">
-            <ul 
-              className="roadmap-feature-list" 
-              role="list" 
+            <ul
+              className="roadmap-feature-list"
+              role="list"
               aria-label={`Функционал периода ${activePeriod.label}`}
             >
               {activePeriod.items.map((item) => {
@@ -233,13 +239,13 @@ export function Roadmap({ data }: { data: RoadmapData }) {
             </ul>
           </div>
 
-          <aside 
-            className="roadmap-info-column" 
-            role="region" 
+          <aside
+            className="roadmap-info-column"
+            role="region"
             aria-labelledby={`panel-${activePeriod.id}-title`}
           >
-            <div 
-              className="roadmap-info-card" 
+            <div
+              className="roadmap-info-card"
               id={`panel-${activePeriod.id}`}
               role="tabpanel"
               aria-labelledby={`tab-${activePeriod.id}`}
@@ -256,8 +262,8 @@ export function Roadmap({ data }: { data: RoadmapData }) {
                 <span className="roadmap-info-timeframe">{activePeriod.timeframe}</span>
               </div>
 
-              <h2 
-                className="roadmap-info-title" 
+              <h2
+                className="roadmap-info-title"
                 id={`panel-${activePeriod.id}-title`}
               >
                 {activeItem.name}

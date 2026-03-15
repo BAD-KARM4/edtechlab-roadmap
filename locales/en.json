@@ -1,0 +1,124 @@
+{
+  "meta": {
+    "tabTitle": "PT EdTechLab — Product Roadmap",
+    "description": "PT EdTechLab product roadmap"
+  },
+  "common": {
+    "productName": "PT EdTechLab",
+    "companyName": "Positive Technologies",
+    "title": "Product Roadmap 2026 – 2027"
+  },
+  "periods": {
+    "q1-2026": {
+      "label": "Q1 2026",
+      "timeframe": "January — March 2026",
+      "summary": "Platform foundation: lab orchestration, scenario engine, and unified learning workspace for autonomous practice."
+    },
+    "q2-2026": {
+      "label": "Q2 2026",
+      "timeframe": "April — June 2026",
+      "summary": "Focus on adaptivity: personalized learning paths, automatic session review, and multi-level hint system."
+    },
+    "q3-2026": {
+      "label": "Q3 2026",
+      "timeframe": "July — September 2026",
+      "summary": "Focus on scale: content factory, skills matrix, and multi-tenancy for independent learning programs."
+    },
+    "q4-2026": {
+      "label": "Q4 2026",
+      "timeframe": "October — December 2026",
+      "summary": "Focus on integrations and analytics: LMS, API, telemetry export, and executive skills reporting."
+    },
+    "q1-2027": {
+      "label": "Q1 2027",
+      "timeframe": "January — March 2027",
+      "summary": "Focus on integrations and analytics: LMS, API, telemetry export, and executive skills reporting."
+    }
+  },
+  "items": {
+    "lab-orchestrator": {
+      "name": "Lab Orchestration",
+      "description": "Unified layer for managing lab environments: start, stop, reset, and lifecycle control without instructor intervention."
+    },
+    "scenario-engine": {
+      "name": "Scenario and Learning Steps Engine",
+      "description": "Step-by-step scenario system with checkpoints, execution logic, completion conditions, and action validation."
+    },
+    "student-workspace": {
+      "name": "Personal Learning Workspace",
+      "description": "Learner interface with goals, materials, hints, artifacts, and overall practice progress tracking."
+    },
+    "sandbox-reset": {
+      "name": "Environment Reset to Known State",
+      "description": "Quickly restore lab environment to reference configuration after errors, experiments, or incomplete scenarios."
+    },
+    "checkpoints": {
+      "name": "Checkpoints and Save Points",
+      "description": "Intermediate state saving mechanism to continue long exercises without replaying all stages."
+    },
+    "attempt-telemetry": {
+      "name": "Basic Attempt and Time Telemetry",
+      "description": "Collection of execution time, attempt count, freezes, and common errors for subsequent scenario efficiency analysis."
+    },
+    "adaptive-paths": {
+      "name": "Adaptive Learning Paths",
+      "description": "Automatic adjustment of learning route based on user strengths, weaknesses, pace, and accumulated results."
+    },
+    "auto-debrief": {
+      "name": "Automatic Session Review",
+      "description": "Summary of user actions after scenario completion: errors, missed steps, successful solutions, and improvement recommendations."
+    },
+    "mentor-hints": {
+      "name": "Multi-level Hints",
+      "description": "Flexible hint system with multiple detail levels: from light guidance to nearly complete solution explanation."
+    },
+    "skill-gap": {
+      "name": "Skill Gap Detection",
+      "description": "Automatic identification of topics and competencies where the user experiences the most difficulty during practice."
+    },
+    "difficulty-tuning": {
+      "name": "Dynamic Difficulty Adjustment",
+      "description": "Adaptation of task difficulty based on progress and completion quality to maintain optimal challenge level."
+    },
+    "content-factory": {
+      "name": "Scenario Content Factory",
+      "description": "Environment for creating, editing, validating, and versioning learning scenarios and practical exercises."
+    },
+    "skills-matrix": {
+      "name": "Skills Matrix and Coverage",
+      "description": "Mapping scenarios to specific skills and knowledge areas to track curriculum coverage and identify gaps."
+    },
+    "tenant-management": {
+      "name": "Multi-tenancy",
+      "description": "Support for isolated spaces for different teams, customers, or learning cohorts with their own configuration."
+    },
+    "versioning": {
+      "name": "Scenario Versioning",
+      "description": "Storage and release of multiple versions of the same scenario for different difficulty levels, cohorts, and curriculum editions."
+    },
+    "review-flow": {
+      "name": "Content Review and Publication",
+      "description": "Process for approval, review, and safe publication of new scenarios and changes to existing practical exercises."
+    },
+    "lms": {
+      "name": "LMS Integrations",
+      "description": "Integration with external learning management systems for transferring statuses, assignments, results, and learning analytics."
+    },
+    "public-api": {
+      "name": "Public API",
+      "description": "Programmatic interface for integrating PT EdTechLab with external platforms, portals, and internal company services."
+    },
+    "telemetry-export": {
+      "name": "Telemetry Export",
+      "description": "Export of events and completion metrics to external analytics and management systems."
+    },
+    "executive-reporting": {
+      "name": "Executive Reporting",
+      "description": "Reports and dashboards for managers showing skill mastery levels, learning dynamics, and problem areas."
+    },
+    "sso": {
+      "name": "SSO and Unified Identity",
+      "description": "Single authentication and linked user profile for seamless operation between PT EdTechLab and corporate ecosystem."
+    }
+  }
+}

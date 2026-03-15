@@ -1,0 +1,179 @@
+{
+  "productName": "common.productName",
+  "companyName": "common.companyName",
+  "title": "common.title",
+  "tabTitle": "meta.tabTitle",
+  "metaDescription": "meta.description",
+  "periods": [
+    {
+      "id": "q1-2026",
+      "label": "periods.q1-2026.label",
+      "timeframe": "periods.q1-2026.timeframe",
+      "summary": "periods.q1-2026.summary",
+      "items": [
+        {
+          "id": "lab-orchestrator",
+          "name": "items.lab-orchestrator.name",
+          "description": "items.lab-orchestrator.description"
+        },
+        {
+          "id": "scenario-engine",
+          "name": "items.scenario-engine.name",
+          "description": "items.scenario-engine.description"
+        },
+        {
+          "id": "student-workspace",
+          "name": "items.student-workspace.name",
+          "description": "items.student-workspace.description"
+        },
+        {
+          "id": "sandbox-reset",
+          "name": "items.sandbox-reset.name",
+          "description": "items.sandbox-reset.description"
+        },
+        {
+          "id": "checkpoints",
+          "name": "items.checkpoints.name",
+          "description": "items.checkpoints.description"
+        },
+        {
+          "id": "attempt-telemetry",
+          "name": "items.attempt-telemetry.name",
+          "description": "items.attempt-telemetry.description"
+        }
+      ]
+    },
+    {
+      "id": "q2-2026",
+      "label": "periods.q2-2026.label",
+      "timeframe": "periods.q2-2026.timeframe",
+      "summary": "periods.q2-2026.summary",
+      "items": [
+        {
+          "id": "adaptive-paths",
+          "name": "items.adaptive-paths.name",
+          "description": "items.adaptive-paths.description"
+        },
+        {
+          "id": "auto-debrief",
+          "name": "items.auto-debrief.name",
+          "description": "items.auto-debrief.description"
+        },
+        {
+          "id": "mentor-hints",
+          "name": "items.mentor-hints.name",
+          "description": "items.mentor-hints.description"
+        },
+        {
+          "id": "skill-gap",
+          "name": "items.skill-gap.name",
+          "description": "items.skill-gap.description"
+        },
+        {
+          "id": "difficulty-tuning",
+          "name": "items.difficulty-tuning.name",
+          "description": "items.difficulty-tuning.description"
+        }
+      ]
+    },
+    {
+      "id": "q3-2026",
+      "label": "periods.q3-2026.label",
+      "timeframe": "periods.q3-2026.timeframe",
+      "summary": "periods.q3-2026.summary",
+      "items": [
+        {
+          "id": "content-factory",
+          "name": "items.content-factory.name",
+          "description": "items.content-factory.description"
+        },
+        {
+          "id": "skills-matrix",
+          "name": "items.skills-matrix.name",
+          "description": "items.skills-matrix.description"
+        },
+        {
+          "id": "tenant-management",
+          "name": "items.tenant-management.name",
+          "description": "items.tenant-management.description"
+        },
+        {
+          "id": "versioning",
+          "name": "items.versioning.name",
+          "description": "items.versioning.description"
+        },
+        {
+          "id": "review-flow",
+          "name": "items.review-flow.name",
+          "description": "items.review-flow.description"
+        }
+      ]
+    },
+    {
+      "id": "q4-2026",
+      "label": "periods.q4-2026.label",
+      "timeframe": "periods.q4-2026.timeframe",
+      "summary": "periods.q4-2026.summary",
+      "items": [
+        {
+          "id": "lms",
+          "name": "items.lms.name",
+          "description": "items.lms.description"
+        },
+        {
+          "id": "public-api",
+          "name": "items.public-api.name",
+          "description": "items.public-api.description"
+        },
+        {
+          "id": "telemetry-export",
+          "name": "items.telemetry-export.name",
+          "description": "items.telemetry-export.description"
+        },
+        {
+          "id": "executive-reporting",
+          "name": "items.executive-reporting.name",
+          "description": "items.executive-reporting.description"
+        },
+        {
+          "id": "sso",
+          "name": "items.sso.name",
+          "description": "items.sso.description"
+        }
+      ]
+    },
+    {
+      "id": "q1-2027",
+      "label": "periods.q1-2027.label",
+      "timeframe": "periods.q1-2027.timeframe",
+      "summary": "periods.q1-2027.summary",
+      "items": [
+        {
+          "id": "lms",
+          "name": "items.lms.name",
+          "description": "items.lms.description"
+        },
+        {
+          "id": "public-api",
+          "name": "items.public-api.name",
+          "description": "items.public-api.description"
+        },
+        {
+          "id": "telemetry-export",
+          "name": "items.telemetry-export.name",
+          "description": "items.telemetry-export.description"
+        },
+        {
+          "id": "executive-reporting",
+          "name": "items.executive-reporting.name",
+          "description": "items.executive-reporting.description"
+        },
+        {
+          "id": "sso",
+          "name": "items.sso.name",
+          "description": "items.sso.description"
+        }
+      ]
+    }
+  ]
+}
