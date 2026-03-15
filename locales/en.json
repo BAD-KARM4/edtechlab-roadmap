@@ -141,7 +141,7 @@
         "name": "Introduction to Cybersecurity",
         "description": "Basic IT fundamentals course with cybersecurity focus. 4 modules covering OS administration, computer networking, and web application deployment.",
         "x": 80,
-        "y": 400,
+        "y": 450,
         "track": "common"
       },
       {
@@ -149,7 +149,7 @@
         "name": "Vulnerability Assessment with Vulnerability Scanner",
         "description": "Course on working with vulnerability scanners to assess infrastructure security.",
         "x": 320,
-        "y": 180,
+        "y": 150,
         "track": "red"
       },
       {
@@ -157,7 +157,7 @@
         "name": "ATT&CK Playbook: TTP in Practice",
         "description": "Course on infrastructure security assessment. 100+ practical cases for TTP training in Red Team projects.",
         "x": 560,
-        "y": 180,
+        "y": 150,
         "track": "red"
       },
       {
@@ -165,7 +165,7 @@
         "name": "Ethical Hacking",
         "description": "Course on ethical hacking and penetration testing.",
         "x": 800,
-        "y": 80,
+        "y": 50,
         "track": "red"
       },
       {
@@ -181,7 +181,7 @@
         "name": "Security Event Analysis using SIEM",
         "description": "Course on security event analysis and incident monitoring using SIEM systems.",
         "x": 560,
-        "y": 400,
+        "y": 410,
         "track": "blue"
       },
       {
@@ -189,7 +189,7 @@
         "name": "Network Attack Analysis using NTA",
         "description": "Course on detecting and analyzing network attacks using NTA technologies.",
         "x": 560,
-        "y": 520,
+        "y": 540,
         "track": "blue"
       },
       {
@@ -213,7 +213,7 @@
         "name": "Linux Artifacts Analysis",
         "description": "Course on collecting and analyzing digital artifacts in Linux operating systems.",
         "x": 800,
-        "y": 520,
+        "y": 410,
         "track": "blue"
       },
       {
@@ -221,7 +221,7 @@
         "name": "Windows Artifacts Analysis",
         "description": "Course on collecting and analyzing digital artifacts in Windows operating systems.",
         "x": 1040,
-        "y": 520,
+        "y": 410,
         "track": "blue"
       },
       {
@@ -229,7 +229,7 @@
         "name": "Memory Dumps Analysis",
         "description": "Course on analyzing RAM content for incident investigation.",
         "x": 1280,
-        "y": 520,
+        "y": 410,
         "track": "blue"
       },
       {
@@ -237,7 +237,7 @@
         "name": "Volatile Data Analysis",
         "description": "Course on working with volatile data and preserving it for further analysis.",
         "x": 1520,
-        "y": 520,
+        "y": 410,
         "track": "blue"
       },
       {
@@ -245,7 +245,7 @@
         "name": "Cyber Threat Analysis using TIP",
         "description": "Course on threat analysis using Threat Intelligence Platform.",
         "x": 1760,
-        "y": 460,
+        "y": 350,
         "track": "blue"
       },
       {
@@ -253,7 +253,7 @@
         "name": "Threat Detection with EDR",
         "description": "Course on detecting and analyzing threats at endpoints using EDR.",
         "x": 1760,
-        "y": 580,
+        "y": 480,
         "track": "blue"
       },
       {
@@ -261,7 +261,7 @@
         "name": "Asset Management using AM",
         "description": "Course on working with organizational assets and managing them.",
         "x": 560,
-        "y": 580,
+        "y": 670,
         "track": "green"
       },
       {
@@ -269,7 +269,7 @@
         "name": "Security Standards Compliance using CM",
         "description": "Course on ensuring information security standards compliance.",
         "x": 800,
-        "y": 580,
+        "y": 670,
         "track": "green"
       },
       {
@@ -277,7 +277,7 @@
         "name": "Vulnerability Remediation using VM",
         "description": "Course on vulnerability management and remediation.",
         "x": 1040,
-        "y": 580,
+        "y": 670,
         "track": "green"
       },
       {
@@ -285,7 +285,7 @@
         "name": "ICS Cyber Attack Analysis using PT ISIM",
         "description": "Course on investigating cyber attacks on technological infrastructure.",
         "x": 560,
-        "y": 660,
+        "y": 800,
         "track": "green"
       },
       {
@@ -293,7 +293,7 @@
         "name": "Malware Detection with Sandbox",
         "description": "Course on detecting malicious software using sandboxes.",
         "x": 560,
-        "y": 740,
+        "y": 930,
         "track": "green"
       },
       {
@@ -301,7 +301,7 @@
         "name": "Malware Analysis",
         "description": "Course on analyzing malicious software.",
         "x": 800,
-        "y": 740,
+        "y": 930,
         "track": "green"
       },
       {
@@ -309,7 +309,7 @@
         "name": "Fixing Web Vulnerabilities using SAST",
         "description": "Course on source code analysis of web applications and web vulnerability remediation.",
         "x": 560,
-        "y": 820,
+        "y": 1060,
         "track": "green"
       },
       {
@@ -317,7 +317,7 @@
         "name": "Web Application Security Analysis using DAST",
         "description": "Course on dynamic analysis of web application security.",
         "x": 800,
-        "y": 820,
+        "y": 1060,
         "track": "green"
       },
       {
@@ -325,7 +325,7 @@
         "name": "Web Application Security Audit",
         "description": "Course on comprehensive web application security audit.",
         "x": 1040,
-        "y": 820,
+        "y": 1060,
         "track": "green"
       },
       {
@@ -333,7 +333,7 @@
         "name": "Container Security using CS",
         "description": "Course on securing containerized applications and environments.",
         "x": 560,
-        "y": 900,
+        "y": 1190,
         "track": "green"
       },
       {
@@ -341,7 +341,7 @@
         "name": "DevSecOps Engineer",
         "description": "Course on integrating security into development and operations processes.",
         "x": 800,
-        "y": 900,
+        "y": 1190,
         "track": "green"
       },
       {
@@ -349,7 +349,7 @@
         "name": "Building Secure Development Processes",
         "description": "Course on establishing and implementing secure development processes in the organization.",
         "x": 1280,
-        "y": 820,
+        "y": 1060,
         "track": "green"
       },
       {
@@ -357,7 +357,7 @@
         "name": "Purple Team",
         "description": "Advanced course on combining offensive and defensive techniques to improve security.",
         "x": 1400,
-        "y": 180,
+        "y": 150,
         "track": "red"
       }
     ],
