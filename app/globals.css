@@ -1021,11 +1021,21 @@ button {
 }
 
 /* View Switcher Styles */
+.view-switcher-section {
+  position: relative;
+  z-index: 2;
+  padding: 60px 0;
+  margin: 40px 0;
+  background:
+    linear-gradient(90deg, transparent, rgba(255, 59, 47, 0.08), transparent);
+  border-top: 1px solid rgba(255, 59, 47, 0.2);
+  border-bottom: 1px solid rgba(255, 59, 47, 0.2);
+}
+
 .view-switcher {
   display: flex;
   gap: 12px;
   justify-content: center;
-  margin-bottom: 40px;
 }
 
 .view-switcher-button {
@@ -1064,10 +1074,14 @@ button {
 }
 
 @media (max-width: 760px) {
+  .view-switcher-section {
+    padding: 40px 0;
+    margin: 32px 0;
+  }
+
   .view-switcher {
     flex-direction: column;
     gap: 8px;
-    margin-bottom: 32px;
   }
 
   .view-switcher-button {
