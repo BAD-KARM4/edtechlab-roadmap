@@ -790,7 +790,7 @@ button {
 .learning-path-header {
   position: relative;
   z-index: 2;
-  margin-bottom: 0;
+  margin-bottom: 54px;
 }
 
 .learning-path-header-bar {
@@ -799,7 +799,6 @@ button {
   justify-content: space-between;
   gap: 24px;
   min-height: 56px;
-  padding-top: 18px;
 }
 
 .learning-path-hero {
@@ -808,7 +807,7 @@ button {
 
 .learning-path-hero-title {
   margin: 0;
-  font-size: clamp(52px, 5.6vw, 63px);
+  font-size: clamp(42px, 5.6vw, 50px);
   line-height: 1.02;
   letter-spacing: -0.05em;
   text-wrap: balance;
@@ -823,16 +822,19 @@ button {
 }
 
 @media (max-width: 760px) {
+  .learning-path-header {
+    margin-bottom: 32px;
+  }
+
   .learning-path-header-bar {
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
-    padding-top: 14px;
   }
 
   .brand-logo-image {
-    width: 46px;
-    height: 46px;
+    width: 44px;
+    height: 44px;
   }
 
   .learning-path-hero {
@@ -853,7 +855,7 @@ button {
 .learning-path-section {
   position: relative;
   z-index: 2;
-  padding-top: 20px;
+  padding-top: 0;
 }
 
 .learning-path-container {
