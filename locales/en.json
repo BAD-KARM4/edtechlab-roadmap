@@ -18,7 +18,7 @@
         {
           "id": "oss-nta-course",
           "name": "OSS Products in Network Attack Analysis using NTA",
-          "description": "8 new cases on Open Source systems Arkime and Wireshark. Total of 40 practical cases in the course."
+          "description": "8 new case studies on the open-source tools Arkime and Wireshark. In total, the course contains 40 practical cases."
         },
         {
           "id": "sast-web-course",
