@@ -317,6 +317,14 @@ button {
   text-wrap: balance;
 }
 
+.hero-description {
+  margin: 16px 0 0;
+  max-width: 600px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
 .roadmap-section {
   position: relative;
   z-index: 2;
@@ -660,6 +668,10 @@ button {
     font-size: clamp(38px, 14vw, 50px);
   }
 
+  .hero-description {
+    font-size: 15px;
+  }
+
   .roadmap-timeline-wrap {
     margin-bottom: 30px;
   }
@@ -784,71 +796,6 @@ button {
 
 .locale-switcher-link-active:hover {
   background: linear-gradient(180deg, rgba(255, 59, 47, 0.25), rgba(255, 59, 47, 0.12));
-}
-
-/* Learning Path Header Styles */
-.learning-path-header {
-  position: relative;
-  z-index: 2;
-  margin-bottom: 54px;
-}
-
-.learning-path-header-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  min-height: 56px;
-}
-
-.learning-path-hero {
-  margin-bottom: 34px;
-}
-
-.learning-path-hero-title {
-  margin: 0;
-  font-size: clamp(42px, 5.6vw, 50px);
-  line-height: 1.02;
-  letter-spacing: -0.05em;
-  text-wrap: balance;
-}
-
-.learning-path-hero-description {
-  margin: 16px 0 0;
-  max-width: 600px;
-  color: var(--muted);
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-@media (max-width: 760px) {
-  .learning-path-header {
-    margin-bottom: 32px;
-  }
-
-  .learning-path-header-bar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-  }
-
-  .brand-logo-image {
-    width: 44px;
-    height: 44px;
-  }
-
-  .learning-path-hero {
-    margin-bottom: 28px;
-  }
-
-  .learning-path-hero-title {
-    max-width: 12ch;
-    font-size: clamp(38px, 14vw, 50px);
-  }
-
-  .learning-path-hero-description {
-    font-size: 15px;
-  }
 }
 
 /* Learning Path Styles */

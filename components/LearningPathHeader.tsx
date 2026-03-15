@@ -10,8 +10,8 @@ interface LearningPathHeaderProps {
 
 export function LearningPathHeader({ title, description }: LearningPathHeaderProps) {
   return (
-    <header className="learning-path-header container" role="banner">
-      <div className="learning-path-header-bar">
+    <header className="site-header container" role="banner">
+      <div className="site-header-bar">
         <a href="#main-content" className="brand-block" aria-label="PT EdTechLab">
           <img
             src={`${basePath}/pt-edtechlab-logo.png`}
@@ -26,9 +26,9 @@ export function LearningPathHeader({ title, description }: LearningPathHeaderPro
         <LocaleSwitcher />
       </div>
 
-      <section className="learning-path-hero">
-        <h1 className="learning-path-hero-title">{title}</h1>
-        <p className="learning-path-hero-description">{description}</p>
+      <section id="top" className="hero container">
+        <h1 className="hero-title">{title}</h1>
+        <p className="hero-description">{description}</p>
       </section>
     </header>
   )
