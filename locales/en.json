@@ -262,7 +262,7 @@
         "description": "Course on working with organizational assets and managing them.",
         "x": 650,
         "y": 750,
-        "track": "green"
+        "track": "blue"
       },
       {
         "id": "cm",
@@ -270,7 +270,7 @@
         "description": "Course on ensuring information security standards compliance.",
         "x": 950,
         "y": 750,
-        "track": "green"
+        "track": "blue"
       },
       {
         "id": "vm",
@@ -278,7 +278,7 @@
         "description": "Course on vulnerability management and remediation.",
         "x": 1250,
         "y": 750,
-        "track": "green"
+        "track": "blue"
       },
       {
         "id": "ics-isim",
@@ -286,7 +286,7 @@
         "description": "Course on investigating cyber attacks on technological infrastructure.",
         "x": 650,
         "y": 900,
-        "track": "green"
+        "track": "blue"
       },
       {
         "id": "sandbox",
@@ -294,7 +294,7 @@
         "description": "Course on detecting malicious software using sandboxes.",
         "x": 650,
         "y": 1050,
-        "track": "green"
+        "track": "blue"
       },
       {
         "id": "malware-analysis",
@@ -302,7 +302,7 @@
         "description": "Course on analyzing malicious software.",
         "x": 950,
         "y": 1050,
-        "track": "green"
+        "track": "blue"
       },
       {
         "id": "sast",
