@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import type { LearningPathData, LearningPathNode } from '@/lib/i18n'
+import type { LearningPathData, LearningPathNode, LearningPathEdge } from '@/lib/i18n'
 
 interface LearningPathProps {
   data: LearningPathData
