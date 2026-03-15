@@ -8,7 +8,7 @@ interface LearningPathProps {
   locale: string
 }
 
-const NODE_WIDTH = 220
+const NODE_WIDTH = 240
 const NODE_HEIGHT = 100
 const NODE_PADDING = 16
 
@@ -90,21 +90,7 @@ export function LearningPath({ data, locale }: LearningPathProps) {
   const getEdgePath = (fromNode: LearningPathNode, toNode: LearningPathNode) => {
     const { startX, startY, endX, endY } = getEdgePoints(fromNode, toNode)
 
-    // Небольшой отступ, чтобы стрелка не заходила на текст
-    const padding = 10
-    const dx = endX - startX
-    const dy = endY - startY
-    const distance = Math.sqrt(dx * dx + dy * dy)
-    
-    if (distance < padding) {
-      return `M ${startX} ${startY} L ${endX} ${endY}`
-    }
-    
-    const ratio = (distance - padding) / distance
-    const finalEndX = startX + dx * ratio
-    const finalEndY = startY + dy * ratio
-
-    return `M ${startX} ${startY} L ${finalEndX} ${finalEndY}`
+    return `M ${startX} ${startY} L ${endX} ${endY}`
   }
 
   return (
