@@ -241,13 +241,13 @@
 }
 
 .site-nav-link:hover {
-  color: var(--text);
-  background: rgba(255, 255, 255, 0.08);
+  color: #000000;
+  background: #ffffff;
 }
 
 .site-nav-link.active {
-  color: var(--text);
-  background: rgba(255, 255, 255, 0.12);
+  color: #000000;
+  background: #ffffff;
 }
 
 @media (max-width: 760px) {
