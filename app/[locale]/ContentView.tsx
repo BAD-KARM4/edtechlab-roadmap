@@ -1,6 +1,6 @@
 'use client'
 
-import { useSearchParams } from 'next/navigation'
+import { Suspense } from 'react'
 import { Roadmap } from '@/components/Roadmap'
 import { LearningPath } from '@/components/LearningPath'
 import type { RoadmapData } from '@/lib/roadmap'
@@ -10,15 +10,15 @@ interface ContentViewProps {
   roadmapData: RoadmapData
   learningPathData: LearningPathData
   locale: string
+  view: string | null
 }
 
-export function ContentView({
+function ContentViewInner({
   roadmapData,
   learningPathData,
   locale,
+  view,
 }: ContentViewProps) {
-  const searchParams = useSearchParams()
-  const view = searchParams.get('view')
   const isLearning = view === 'learning'
 
   return (
@@ -33,5 +33,23 @@ export function ContentView({
         <Roadmap data={roadmapData} />
       )}
     </main>
+  )
+}
+
+export function ContentView({
+  roadmapData,
+  learningPathData,
+  locale,
+  view,
+}: ContentViewProps) {
+  return (
+    <Suspense fallback={null}>
+      <ContentViewInner
+        roadmapData={roadmapData}
+        learningPathData={learningPathData}
+        locale={locale}
+        view={view}
+      />
+    </Suspense>
   )
 }
