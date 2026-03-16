@@ -8,8 +8,8 @@ export function Header() {
   const pathname = usePathname()
 
   const navItems = [
-    { href: `${basePath}/`, label: 'Roadmap', active: !pathname.includes('view=') },
-    { href: `${basePath}/?view=learning`, label: 'Learning', active: pathname.includes('view=learning') },
+    { href: `${basePath}/`, label: 'Roadmap', active: !pathname.includes('?view=') },
+    { href: `${basePath}/?view=learning`, label: 'Learning', active: pathname.includes('?view=learning') },
   ]
 
   return (

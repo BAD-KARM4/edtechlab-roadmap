@@ -22,7 +22,7 @@ function ContentViewInner({
   const isLearning = view === 'learning'
 
   return (
-    <main className="page-shell" id="main-content">
+    <>
       <div className="page-noise" aria-hidden="true" />
       <div className="bg-red-glow bg-red-glow-a" aria-hidden="true" />
       <div className="bg-red-glow bg-red-glow-b" aria-hidden="true" />
@@ -32,7 +32,7 @@ function ContentViewInner({
       ) : (
         <Roadmap data={roadmapData} />
       )}
-    </main>
+    </>
   )
 }
 
@@ -43,7 +43,7 @@ export function ContentView({
   view,
 }: ContentViewProps) {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<div>Loading...</div>}>
       <ContentViewInner
         roadmapData={roadmapData}
         learningPathData={learningPathData}

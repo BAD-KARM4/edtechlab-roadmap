@@ -2,16 +2,15 @@ import { ContentView } from './ContentView'
 import { getTranslations, type Locale } from '@/lib/i18n'
 import type { RoadmapData } from '@/lib/roadmap'
 
-export const dynamic = 'force-static'
-
 interface PageProps {
   params: Promise<{ locale: string }>
-  searchParams: Promise<{ view?: string }>
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
 export default async function Page({ params, searchParams }: PageProps) {
   const { locale } = await params
-  const { view } = await searchParams
+  const searchParamsData = await searchParams
+  const view = searchParamsData.view as string | undefined
   const localeData = await getTranslations(locale as Locale)
 
   // Преобразуем LocaleData в RoadmapData
