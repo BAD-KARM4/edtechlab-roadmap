@@ -3,22 +3,26 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { LocaleSwitcher } from '@/components/LocaleSwitcher'
+import logo from '@/public/pt-edtechlab-logo.png'
 
 export function Header() {
   const pathname = usePathname()
+  
+  // Определяем текущий locale из пути
+  const locale = pathname.split('/')[1] || 'ru'
 
   const navItems = [
-    { href: '/', label: 'Roadmap', active: !pathname.includes('/learning') },
-    { href: '/learning', label: 'Learning', active: pathname.includes('/learning') },
+    { href: `/${locale}`, label: 'Roadmap', active: !pathname.includes('/learning') },
+    { href: `/${locale}/learning`, label: 'Learning', active: pathname.includes('/learning') },
   ]
 
   return (
     <header className="site-top-header" role="banner">
       {/* Верхняя панель */}
       <div className="site-top-bar container">
-        <Link href="/" className="brand-link" aria-label="PT EdTechLab">
+        <Link href={`/${locale}`} className="brand-link" aria-label="PT EdTechLab">
           <img
-            src="/pt-edtechlab-logo.png"
+            src={logo.src}
             alt="PT EdTechLab"
             className="brand-logo"
           />

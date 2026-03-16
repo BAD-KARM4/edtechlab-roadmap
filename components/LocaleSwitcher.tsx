@@ -2,7 +2,6 @@
 
 import { usePathname } from 'next/navigation'
 import { supportedLocales, type Locale } from '@/lib/i18n'
-import { basePath } from '@/lib/config'
 
 const localeNames: Record<Locale, string> = {
   ru: 'RU',
@@ -13,31 +12,23 @@ export function LocaleSwitcher() {
   const pathname = usePathname()
 
   // Извлекаем текущий locale из pathname
-  const pathnameWithoutBase = pathname.replace(basePath, '')
-  const parts = pathnameWithoutBase.split('/').filter(Boolean)
+  const parts = pathname.split('/').filter(Boolean)
   const currentLocale = (parts[0] as Locale) || 'ru'
 
   function getHref(locale: Locale): string {
-    // Удаляем текущий locale из пути
-    let pathWithoutLocale = pathnameWithoutBase
+    // Определяем базовый путь без текущего locale
+    let pathWithoutLocale = pathname
     if (parts[0] && supportedLocales.includes(parts[0] as Locale)) {
-      pathWithoutLocale = pathnameWithoutBase.replace(`/${parts[0]}`, '')
+      pathWithoutLocale = pathname.replace(`/${parts[0]}`, '')
     }
 
-    // Обеспечиваем, что путь начинается и заканчивается правильно
+    // Обеспечиваем, что путь начинается с /
     if (!pathWithoutLocale.startsWith('/')) {
       pathWithoutLocale = `/${pathWithoutLocale}`
     }
 
-    // Удаляем trailing slash для консистентности
-    pathWithoutLocale = pathWithoutLocale.replace(/\/$/, '')
-
-    // Обрабатываем корневой путь
-    if (pathWithoutLocale === '') {
-      return `${basePath}/${locale}/`
-    }
-
-    return `${basePath}/${locale}${pathWithoutLocale}/`
+    // Возвращаем путь с новым locale
+    return `/${locale}${pathWithoutLocale}`
   }
 
   return (

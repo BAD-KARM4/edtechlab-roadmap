@@ -1,5 +1,9 @@
 import { LearningPath } from '@/components/LearningPath'
-import { getTranslations, type Locale } from '@/lib/i18n'
+import { getTranslations, supportedLocales, type Locale } from '@/lib/i18n'
+
+export function generateStaticParams() {
+  return supportedLocales.map((locale) => ({ locale }))
+}
 
 interface LearningPageProps {
   params: Promise<{ locale: Locale }>
