@@ -124,7 +124,7 @@ export function LearningPath({ data, locale }: LearningPathProps) {
       <div className="learning-path-legend">
         <div className="learning-path-legend-item">
           <span className="learning-path-legend-color common" />
-          <span>Общий курс</span>
+          <span>{locale === 'ru' ? 'Общий курс' : 'General Course'}</span>
         </div>
         <div className="learning-path-legend-item">
           <span className="learning-path-legend-color red" />
