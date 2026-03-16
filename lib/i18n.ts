@@ -34,7 +34,6 @@ export interface LocaleData {
   }
   common: {
     productName: string
-    companyName: string
     title: string
   }
   periods: RoadmapPeriod[]

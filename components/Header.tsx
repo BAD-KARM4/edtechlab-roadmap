@@ -27,7 +27,6 @@ export function Header() {
             className="brand-logo"
           />
           <span className="brand-name">PT EdTechLab</span>
-          <span className="brand-company">Positive Technologies</span>
         </Link>
         <LocaleSwitcher />
       </div>

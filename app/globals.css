@@ -200,14 +200,6 @@
   letter-spacing: -0.03em;
 }
 
-.brand-company {
-  font-size: 13px;
-  color: var(--muted-soft);
-  margin-left: 8px;
-  padding-left: 8px;
-  border-left: 1px solid rgba(255, 255, 255, 0.2);
-}
-
 .site-main-nav {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -721,10 +713,6 @@ button {
 
   .brand-name {
     font-size: 17px;
-  }
-
-  .brand-company {
-    display: none;
   }
 
   .page-shell {

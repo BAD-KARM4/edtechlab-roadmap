@@ -14,7 +14,6 @@ export interface RoadmapPeriod {
 
 export interface RoadmapData {
   productName: string
-  companyName: string
   title: string
   tabTitle: string
   metaDescription: string

@@ -13,7 +13,6 @@ export default async function Page({ params }: PageProps) {
   // Преобразуем LocaleData в RoadmapData
   const data: RoadmapData = {
     productName: localeData.common.productName,
-    companyName: localeData.common.companyName,
     title: localeData.common.title,
     tabTitle: localeData.meta.tabTitle,
     metaDescription: localeData.meta.description,
