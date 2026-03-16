@@ -9,7 +9,7 @@
   },
   "nav": {
     "roadmap": "Roadmap",
-    "learning": "Learning Path"
+    "learning": "Courses Map"
   },
   "periods": [
     {
@@ -136,7 +136,7 @@
     }
   ],
   "learningPath": {
-    "title": "Learning Path",
+    "title": "Courses Map on PT EdTechLab Simulator",
     "description": "Interactive cybersecurity skills development roadmap",
     "nodes": [
       {
