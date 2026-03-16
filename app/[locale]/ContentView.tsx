@@ -1,7 +1,6 @@
 'use client'
 
-import { Suspense } from 'react'
-import { useSearchParams } from 'next/navigation'
+import { Suspense, useEffect, useState } from 'react'
 import { Roadmap } from '@/components/Roadmap'
 import { LearningPath } from '@/components/LearningPath'
 import type { RoadmapData } from '@/lib/roadmap'
@@ -17,9 +16,17 @@ function ContentViewInner({
   roadmapData,
   learningPathData,
 }: ContentViewProps) {
-  const searchParams = useSearchParams()
-  const view = searchParams.get('view')
-  const isLearning = view === 'learning'
+  const [isLearning, setIsLearning] = useState(false)
+
+  useEffect(() => {
+    const checkHash = () => {
+      setIsLearning(window.location.hash === '#view=learning')
+    }
+
+    checkHash()
+    window.addEventListener('hashchange', checkHash)
+    return () => window.removeEventListener('hashchange', checkHash)
+  }, [])
 
   return (
     <>
@@ -28,7 +35,7 @@ function ContentViewInner({
       <div className="bg-red-glow bg-red-glow-b" aria-hidden="true" />
 
       {isLearning ? (
-        <LearningPath data={learningPathData} locale="ru" />
+        <LearningPath data={learningPathData} locale={locale} />
       ) : (
         <Roadmap data={roadmapData} />
       )}
