@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { LocaleSwitcher } from '@/components/LocaleSwitcher'
 import { basePath } from '@/lib/config'
@@ -16,7 +17,7 @@ export function Header() {
     <header className="site-top-header" role="banner">
       {/* Верхняя панель */}
       <div className="site-top-bar container">
-        <a href={`${basePath}/`} className="brand-link" aria-label="PT EdTechLab">
+        <Link href={`${basePath}/`} className="brand-link" aria-label="PT EdTechLab">
           <img
             src={`${basePath}/pt-edtechlab-logo.png`}
             alt="PT EdTechLab"
@@ -24,7 +25,7 @@ export function Header() {
           />
           <span className="brand-name">PT EdTechLab</span>
           <span className="brand-company">Positive Technologies</span>
-        </a>
+        </Link>
         <LocaleSwitcher />
       </div>
 
@@ -33,12 +34,12 @@ export function Header() {
         <ul className="site-nav-list">
           {navItems.map((item) => (
             <li key={item.href}>
-              <a
+              <Link
                 href={item.href}
                 className={`site-nav-link ${item.active ? 'active' : ''}`}
               >
                 {item.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
