@@ -380,7 +380,6 @@ button {
 
 .bg-red-glow-a {
   top: 300px;
-  right: -160px;
   width: 540px;
   height: 540px;
   background: radial-gradient(circle, rgba(255, 59, 47, 0.16), transparent 62%);
@@ -388,7 +387,6 @@ button {
 
 .bg-red-glow-b {
   top: 620px;
-  right: 120px;
   width: 260px;
   height: 260px;
   background: radial-gradient(circle, rgba(255, 59, 47, 0.12), transparent 65%);
