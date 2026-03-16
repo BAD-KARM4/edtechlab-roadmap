@@ -4,13 +4,10 @@ import type { RoadmapData } from '@/lib/roadmap'
 
 interface PageProps {
   params: Promise<{ locale: string }>
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
-export default async function Page({ params, searchParams }: PageProps) {
+export default async function Page({ params }: PageProps) {
   const { locale } = await params
-  const searchParamsData = await searchParams
-  const view = searchParamsData.view as string | undefined
   const localeData = await getTranslations(locale as Locale)
 
   // Преобразуем LocaleData в RoadmapData
@@ -31,7 +28,6 @@ export default async function Page({ params, searchParams }: PageProps) {
       roadmapData={data}
       learningPathData={learningPathData}
       locale={locale}
-      view={view || null}
     />
   )
 }

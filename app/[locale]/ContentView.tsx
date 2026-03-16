@@ -1,6 +1,7 @@
 'use client'
 
 import { Suspense } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { Roadmap } from '@/components/Roadmap'
 import { LearningPath } from '@/components/LearningPath'
 import type { RoadmapData } from '@/lib/roadmap'
@@ -10,15 +11,14 @@ interface ContentViewProps {
   roadmapData: RoadmapData
   learningPathData: LearningPathData
   locale: string
-  view: string | null
 }
 
 function ContentViewInner({
   roadmapData,
   learningPathData,
-  locale,
-  view,
 }: ContentViewProps) {
+  const searchParams = useSearchParams()
+  const view = searchParams.get('view')
   const isLearning = view === 'learning'
 
   return (
@@ -28,7 +28,7 @@ function ContentViewInner({
       <div className="bg-red-glow bg-red-glow-b" aria-hidden="true" />
 
       {isLearning ? (
-        <LearningPath data={learningPathData} locale={locale} />
+        <LearningPath data={learningPathData} locale="ru" />
       ) : (
         <Roadmap data={roadmapData} />
       )}
@@ -40,7 +40,6 @@ export function ContentView({
   roadmapData,
   learningPathData,
   locale,
-  view,
 }: ContentViewProps) {
   return (
     <Suspense fallback={<div>Loading...</div>}>
@@ -48,7 +47,6 @@ export function ContentView({
         roadmapData={roadmapData}
         learningPathData={learningPathData}
         locale={locale}
-        view={view}
       />
     </Suspense>
   )
