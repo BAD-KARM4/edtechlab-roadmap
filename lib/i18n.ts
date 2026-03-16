@@ -36,6 +36,10 @@ export interface LocaleData {
     productName: string
     title: string
   }
+  nav: {
+    roadmap: string
+    learning: string
+  }
   periods: RoadmapPeriod[]
   learningPath: LearningPathData
 }

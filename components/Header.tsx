@@ -5,15 +5,20 @@ import { usePathname } from 'next/navigation'
 import { LocaleSwitcher } from '@/components/LocaleSwitcher'
 import logo from '@/public/pt-edtechlab-logo.png'
 
-export function Header() {
+interface HeaderProps {
+  locale: string
+  navLabels: {
+    roadmap: string
+    learning: string
+  }
+}
+
+export function Header({ locale, navLabels }: HeaderProps) {
   const pathname = usePathname()
-  
-  // Определяем текущий locale из пути
-  const locale = pathname.split('/')[1] || 'ru'
 
   const navItems = [
-    { href: `/${locale}`, label: 'Roadmap', active: !pathname.includes('/learning') },
-    { href: `/${locale}/learning`, label: 'Learning', active: pathname.includes('/learning') },
+    { href: `/${locale}`, label: navLabels.roadmap, active: !pathname.includes('/learning') },
+    { href: `/${locale}/learning`, label: navLabels.learning, active: pathname.includes('/learning') },
   ]
 
   return (

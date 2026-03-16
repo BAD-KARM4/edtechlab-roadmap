@@ -7,6 +7,10 @@
     "productName": "PT EdTechLab",
     "title": "Product Roadmap 2026"
   },
+  "nav": {
+    "roadmap": "Roadmap",
+    "learning": "Learning Path"
+  },
   "periods": [
     {
       "id": "q1-2026",

@@ -29,11 +29,18 @@ export default async function LocaleLayout({
   params,
 }: LocaleLayoutProps) {
   const { locale } = await params
+  const translations = await getTranslations(locale as Locale)
 
   return (
     <html lang={locale}>
       <body>
-        <Header />
+        <Header
+          locale={locale}
+          navLabels={{
+            roadmap: translations.nav.roadmap,
+            learning: translations.nav.learning,
+          }}
+        />
         <main id="main-content">{children}</main>
       </body>
     </html>
