@@ -235,20 +235,19 @@
   transition:
     color 0.2s ease,
     background-color 0.2s ease;
-  border-bottom: 2px solid transparent;
+  border-radius: 8px;
   cursor: pointer;
   white-space: nowrap;
 }
 
 .site-nav-link:hover {
   color: var(--text);
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .site-nav-link.active {
   color: var(--text);
-  border-bottom-color: var(--red);
-  background: rgba(255, 59, 47, 0.08);
+  background: rgba(255, 255, 255, 0.12);
 }
 
 @media (max-width: 760px) {
