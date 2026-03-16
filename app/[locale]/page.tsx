@@ -20,14 +20,5 @@ export default async function Page({ params }: PageProps) {
     periods: localeData.periods,
   }
 
-  // Данные для Learning Path
-  const learningPathData = localeData.learningPath
-
-  return (
-    <ContentView
-      roadmapData={data}
-      learningPathData={learningPathData}
-      locale={locale}
-    />
-  )
+  return <ContentView roadmapData={data} />
 }
