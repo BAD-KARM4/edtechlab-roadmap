@@ -317,14 +317,6 @@ button {
   text-wrap: balance;
 }
 
-.hero-description {
-  margin: 16px 0 0;
-  max-width: 600px;
-  color: var(--muted);
-  font-size: 16px;
-  line-height: 1.6;
-}
-
 .roadmap-section {
   position: relative;
   z-index: 2;
@@ -668,10 +660,6 @@ button {
     font-size: clamp(38px, 14vw, 50px);
   }
 
-  .hero-description {
-    font-size: 15px;
-  }
-
   .learning-path-header {
     padding-top: 24px;
   }
@@ -836,10 +824,6 @@ button {
   line-height: 1.02;
   letter-spacing: -0.05em;
   text-wrap: balance;
-}
-
-.learning-path-hero {
-  margin-bottom: 34px;
 }
 
 /* Learning Path Styles */

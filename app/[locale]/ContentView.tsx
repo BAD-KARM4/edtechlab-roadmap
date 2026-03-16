@@ -29,7 +29,6 @@ export function ContentView({
         <>
           <LearningPathHeader
             title={learningPathData.title}
-            description={learningPathData.description}
           />
           <LearningPath data={learningPathData} locale={locale} />
         </>
