@@ -2,6 +2,7 @@
 
 import { usePathname } from 'next/navigation'
 import { supportedLocales, type Locale } from '@/lib/i18n'
+import { basePath } from '@/lib/config'
 
 const localeNames: Record<Locale, string> = {
   ru: 'RU',
@@ -27,8 +28,8 @@ export function LocaleSwitcher() {
       pathWithoutLocale = `/${pathWithoutLocale}`
     }
 
-    // Возвращаем путь с новым locale
-    return `/${locale}${pathWithoutLocale}`
+    // Возвращаем путь с basePath и новым locale
+    return `${basePath}/${locale}${pathWithoutLocale}`
   }
 
   return (
