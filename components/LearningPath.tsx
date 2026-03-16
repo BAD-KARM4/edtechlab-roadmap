@@ -117,7 +117,6 @@ export function LearningPath({ data, locale }: LearningPathProps) {
 
       <section id="top" className="hero container">
         <h1 className="hero-title">{data.title}</h1>
-        <p className="hero-description">{data.description}</p>
       </section>
 
       <section className="learning-path-section" aria-label={data.title}>
