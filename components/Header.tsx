@@ -3,23 +3,22 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { LocaleSwitcher } from '@/components/LocaleSwitcher'
-import { basePath } from '@/lib/config'
 
 export function Header() {
   const pathname = usePathname()
 
   const navItems = [
-    { href: `${basePath}/`, label: 'Roadmap', active: !pathname.includes('/learning') },
-    { href: `${basePath}/learning`, label: 'Learning', active: pathname.includes('/learning') },
+    { href: '/', label: 'Roadmap', active: !pathname.includes('/learning') },
+    { href: '/learning', label: 'Learning', active: pathname.includes('/learning') },
   ]
 
   return (
     <header className="site-top-header" role="banner">
       {/* Верхняя панель */}
       <div className="site-top-bar container">
-        <Link href={`${basePath}/`} className="brand-link" aria-label="PT EdTechLab">
+        <Link href="/" className="brand-link" aria-label="PT EdTechLab">
           <img
-            src={`${basePath}/pt-edtechlab-logo.png`}
+            src="/pt-edtechlab-logo.png"
             alt="PT EdTechLab"
             className="brand-logo"
           />
