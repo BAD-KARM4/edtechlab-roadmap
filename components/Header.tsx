@@ -18,34 +18,39 @@ export function Header() {
 
   return (
     <header className="site-top-header" role="banner">
-      {/* Верхняя панель */}
       <div className="site-top-bar container">
-        <Link href={`/${locale}`} className="brand-link" aria-label="PT EdTechLab">
-          <img
-            src={logo.src}
-            alt="PT EdTechLab"
-            className="brand-logo"
-          />
-          <span className="brand-name">PT EdTechLab</span>
-        </Link>
-        <LocaleSwitcher />
-      </div>
+        {/* Левая часть: логотип и навигация */}
+        <div className="site-top-bar-left">
+          <Link href={`/${locale}`} className="brand-link" aria-label="PT EdTechLab">
+            <img
+              src={logo.src}
+              alt="PT EdTechLab"
+              className="brand-logo"
+            />
+            <span className="brand-name">PT EdTechLab</span>
+          </Link>
 
-      {/* Основная навигация */}
-      <nav className="site-main-nav container" aria-label="Main navigation">
-        <ul className="site-nav-list">
-          {navItems.map((item) => (
-            <li key={item.href}>
-              <Link
-                href={item.href}
-                className={`site-nav-link ${item.active ? 'active' : ''}`}
-              >
-                {item.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+          <nav className="site-main-nav" aria-label="Main navigation">
+            <ul className="site-nav-list">
+              {navItems.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className={`site-nav-link ${item.active ? 'active' : ''}`}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+
+        {/* Правая часть: переключатель языка */}
+        <div className="site-top-bar-right">
+          <LocaleSwitcher />
+        </div>
+      </div>
     </header>
   )
 }
