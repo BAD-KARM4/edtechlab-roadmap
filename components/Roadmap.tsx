@@ -149,11 +149,11 @@ export function Roadmap({ data }: RoadmapProps) {
       <div className="bg-red-glow bg-red-glow-a" aria-hidden="true" />
       <div className="bg-red-glow bg-red-glow-b" aria-hidden="true" />
 
-      <section id="top" className="hero container">
+      <section id="top" className="hero">
         <h1 className="hero-title">{data.title}</h1>
       </section>
 
-      <section id="roadmap" className="roadmap-section container" aria-label="Дорожная карта продукта">
+      <section id="roadmap" className="roadmap-section" aria-label="Дорожная карта продукта">
         <div className="roadmap-timeline-wrap">
           <div className="roadmap-timeline-line" aria-hidden="true" />
 
