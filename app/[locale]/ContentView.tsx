@@ -15,6 +15,7 @@ interface ContentViewProps {
 function ContentViewInner({
   roadmapData,
   learningPathData,
+  locale,
 }: ContentViewProps) {
   const [isLearning, setIsLearning] = useState(false)
 
