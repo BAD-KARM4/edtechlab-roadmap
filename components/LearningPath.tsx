@@ -110,7 +110,17 @@ export function LearningPath({ data, locale }: LearningPathProps) {
   }
 
   return (
-    <section className="learning-path-section" aria-label={data.title}>
+    <>
+      <div className="page-noise" aria-hidden="true" />
+      <div className="bg-red-glow bg-red-glow-a" aria-hidden="true" />
+      <div className="bg-red-glow bg-red-glow-b" aria-hidden="true" />
+
+      <section id="top" className="hero container">
+        <h1 className="hero-title">{data.title}</h1>
+        <p className="hero-description">{data.description}</p>
+      </section>
+
+      <section className="learning-path-section" aria-label={data.title}>
       {/* Legend */}
       <div className="learning-path-legend">
         <div className="learning-path-legend-item">
