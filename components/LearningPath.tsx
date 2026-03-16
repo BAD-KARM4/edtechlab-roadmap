@@ -354,5 +354,6 @@ export function LearningPath({ data, locale }: LearningPathProps) {
         </div>
       )}
     </section>
+    </>
   )
 }
