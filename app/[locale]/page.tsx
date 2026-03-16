@@ -2,6 +2,8 @@ import { ContentView } from './ContentView'
 import { getTranslations, type Locale } from '@/lib/i18n'
 import type { RoadmapData } from '@/lib/roadmap'
 
+export const dynamic = 'force-static'
+
 interface PageProps {
   params: Promise<{ locale: string }>
   searchParams: Promise<{ view?: string }>
