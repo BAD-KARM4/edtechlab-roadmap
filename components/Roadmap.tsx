@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo, useState, useCallback } from 'react'
 import type { RoadmapData, RoadmapItem, RoadmapPeriod } from '@/lib/roadmap'
-import { LocaleSwitcher } from '@/components/LocaleSwitcher'
 import { basePath } from '@/lib/config'
 
 function getValidPeriod(periods: RoadmapPeriod[], periodId: string) {
@@ -145,27 +144,10 @@ export function Roadmap({ data }: RoadmapProps) {
   )
 
   return (
-    <main className="page-shell" id="main-content">
+    <>
       <div className="page-noise" aria-hidden="true" />
       <div className="bg-red-glow bg-red-glow-a" aria-hidden="true" />
       <div className="bg-red-glow bg-red-glow-b" aria-hidden="true" />
-
-      <header className="site-header container" role="banner">
-        <div className="site-header-bar">
-          <a href="#main-content" className="brand-block" aria-label="PT EdTechLab">
-            <img
-              src={`${assetBase}/pt-edtechlab-logo.png`}
-              alt="PT EdTechLab"
-              className="brand-logo-image"
-            />
-            <div className="brand-copy">
-              <div className="brand-name">{data.productName}</div>
-              <div className="brand-subtitle">{data.companyName}</div>
-            </div>
-          </a>
-          <LocaleSwitcher />
-        </div>
-      </header>
 
       <section id="top" className="hero container">
         <h1 className="hero-title">{data.title}</h1>
@@ -274,6 +256,6 @@ export function Roadmap({ data }: RoadmapProps) {
           </aside>
         </div>
       </section>
-    </main>
+    </>
   )
 }

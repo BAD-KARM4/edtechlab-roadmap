@@ -1,10 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { Roadmap } from '@/components/Roadmap'
 import { LearningPath } from '@/components/LearningPath'
-import { LearningPathHeader } from '@/components/LearningPathHeader'
-import { ViewSwitcher, type ViewType } from '@/components/ViewSwitcher'
 import type { RoadmapData } from '@/lib/roadmap'
 import type { LearningPathData } from '@/lib/i18n'
 
@@ -19,25 +17,21 @@ export function ContentView({
   learningPathData,
   locale,
 }: ContentViewProps) {
-  const [currentView, setCurrentView] = useState<ViewType>('roadmap')
+  const searchParams = useSearchParams()
+  const view = searchParams.get('view')
+  const isLearning = view === 'learning'
 
   return (
-    <>
-      {currentView === 'roadmap' ? (
-        <Roadmap data={roadmapData} />
+    <main className="page-shell" id="main-content">
+      <div className="page-noise" aria-hidden="true" />
+      <div className="bg-red-glow bg-red-glow-a" aria-hidden="true" />
+      <div className="bg-red-glow bg-red-glow-b" aria-hidden="true" />
+
+      {isLearning ? (
+        <LearningPath data={learningPathData} locale={locale} />
       ) : (
-        <>
-          <LearningPathHeader
-            title={learningPathData.title}
-          />
-          <LearningPath data={learningPathData} locale={locale} />
-        </>
+        <Roadmap data={roadmapData} />
       )}
-      
-      {/* Плавающий переключатель справа */}
-      <div className="view-switcher-floating">
-        <ViewSwitcher currentView={currentView} onSwitch={setCurrentView} />
-      </div>
-    </>
+    </main>
   )
 }

@@ -1,6 +1,7 @@
 import '../globals.css'
 import type { Metadata } from 'next'
 import { getTranslations, supportedLocales, type Locale } from '@/lib/i18n'
+import { Header } from '@/components/Header'
 
 interface LocaleLayoutProps {
   children: React.ReactNode
@@ -31,7 +32,10 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   )
 }
